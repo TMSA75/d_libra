@@ -304,11 +304,11 @@ const DetailPage = () => {
 
   return (
     <>
-      {chapterChange &&
+      {/* {chapterChange &&
         toast.info("Chapter Changed", {
           position: "bottom-center",
           toastId: "",
-        })}
+        })} */}
       <div
         style={{ position: pinstate ? "fixed" : "", top: pinstate ? "0" : "" }}
       >

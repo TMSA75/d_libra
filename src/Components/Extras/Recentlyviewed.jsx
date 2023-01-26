@@ -27,9 +27,7 @@ import {
 } from "../../Redux/Actions/bookmark.action";
 import Swal from "sweetalert2";
 import { setBookMarkPriority } from "../../Redux/Actions/Client Side/librar.y.action";
-
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
+import ReuseableCarousel from "../ReusableCarousel";
 
 const Recentlyviewed = () => {
   const dispatch = useDispatch();
@@ -50,149 +48,6 @@ const Recentlyviewed = () => {
   const handleBack = () => {
     navigate("/");
   };
-
-  const [sliderRef] = useKeenSlider({
-    loop: false,
-    mode: "free-snap",
-    slides: {
-      perView: 4,
-      spacing: 5,
-    },
-    breakpoints: {
-      "(max-width: 1120px)": {
-        slides: {
-          perView: 3,
-          spacing: 5,
-        },
-      },
-      "(max-width: 1060px)": {
-        slides: {
-          perView: 4.3,
-          spacing: 5,
-        },
-      },
-      "(max-width: 860px)": {
-        slides: {
-          perView: 2.14,
-          spacing: 5,
-        },
-      },
-      "(max-width: 700px)": {
-        slides: {
-          perView: 2,
-          spacing: 5,
-        },
-      },
-      "(max-width: 510)": {
-        slides: {
-          perView: 1.15,
-          spacing: 5,
-        },
-      },
-      "(max-width: 430px)": {
-        slides: {
-          perView: 1.19,
-          spacing: 5,
-        },
-      },
-      "(max-width: 380px)": {
-        slides: {
-          perView: 1.21,
-          spacing: 5,
-        },
-      },
-      "(max-width: 361px)": {
-        slides: {
-          perView: 1.24,
-          spacing: 5,
-        },
-      },
-      "(max-width: 338px)": {
-        slides: {
-          perView: 1.3,
-          spacing: 5,
-        },
-      },
-    },
-  });
-
-  // const settings = {
-  //   dots: false,
-  //   adaptiveHeight: false,
-  //   initialSlide: 0,
-  //   slidesToShow: 4,
-  //   autoplay: false,
-  //   slidesToScroll: 1,
-  //   centerMode: false,
-  //   arrows: false,
-  //   speed: 1300,
-  //   infinite: false,
-  //   responsive: [
-  //     {
-  //       breakpoint: 1120,
-  //       settings: {
-  //         slidesToShow: 3,
-  //         slidesToScroll: 1,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 860,
-  //       settings: {
-  //         slidesToShow: 2.14,
-  //         slidesToScroll: 1,
-  //         centerMode: false,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 700,
-  //       settings: {
-  //         slidesToShow: 2,
-  //         slidesToScroll: 1,
-  //         centerMode: false,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 510,
-  //       settings: {
-  //         slidesToShow: 1.15,
-  //         slidesToScroll: 1,
-  //         centerMode: false,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 430,
-  //       settings: {
-  //         slidesToShow: 1.19,
-  //         slidesToScroll: 1,
-  //         centerMode: false,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 380,
-  //       settings: {
-  //         slidesToShow: 1.21,
-  //         slidesToScroll: 1,
-  //         centerMode: false,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 361,
-  //       settings: {
-  //         slidesToShow: 1.24,
-  //         slidesToScroll: 1,
-  //         centerMode: false,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 338,
-  //       settings: {
-  //         slidesToShow: 1.3,
-  //         slidesToScroll: 1,
-  //         centerMode: false,
-  //       },
-  //     },
-  //   ],
-  // };
 
   const handleDetails = (
     identifier,
@@ -313,10 +168,19 @@ const Recentlyviewed = () => {
                 </div>
                 <div>
                   {day?.items?.length > 0 ? (
-                    <div className="keen-slider" ref={sliderRef}>
+                    <ReuseableCarousel>
                       {day?.items?.map((e) => {
                         return (
-                          <div className=" keen-slider__slide">
+                          <div
+                            style={
+                              window.innerWidth < 800 ? {} : { padding: "3px" }
+                            }
+                            className={
+                              window.innerWidth < 800
+                                ? "keen-slider__slide"
+                                : "intro-slides"
+                            }
+                          >
                             <img
                               src={`${development}/media/${e.images}`}
                               className="landingpage_images"
@@ -391,7 +255,7 @@ const Recentlyviewed = () => {
                           </div>
                         );
                       })}
-                    </div>
+                    </ReuseableCarousel>
                   ) : (
                     <div style={{ display: "flex", justifyContent: "center" }}>
                       <h4>No history for {day?.chapterName}</h4>

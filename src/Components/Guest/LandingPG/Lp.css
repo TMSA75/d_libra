@@ -118,36 +118,6 @@
   padding-bottom: 20px;
 }
 
-
-.slick-prev {
-  margin-left: 1rem !important;
-  background: white !important;
-  border-radius: 50% !important;
-  border-color: black !important;
-  border: 1px solid black !important;
-  height: 50px !important;
-  width: 50px !important;
-  z-index: 12 !important;
-}
-
-.slick-next {
-  margin-right: 0.7rem !important;
-  background: white !important;
-  border-radius: 50% !important;
-  border-color: black !important;
-  border: 1px solid black !important;
-  height: 50px !important;
-  width: 50px !important;
-  z-index: 12 !important;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  color: black !important;
-  line-height: 1.45 !important;
-  font-size: 38px !important
-}
-
 .librarycoursecontainer {
   width: 100%;
   display: flex;
@@ -502,15 +472,7 @@
   /* height: 220px !important;
   width: 300px !important; */
 }
-.slick-track {
-  float: left !important;
-}
-.slick-next {
-  right: -14px !important;
-}
-.slick-prev {
-  left: -20px !important;
-}
+
 .content_root_container {
   padding: 18px 5px;
 }
@@ -619,11 +581,7 @@
     align-items: center;
     letter-spacing: -0.015em;
   }
-
-  .slick-list {
-    padding: 0 8px !important;
-  }
-
+  
   .tagsiconcontainer {
     width: 11.67px;
     height: 14px;
