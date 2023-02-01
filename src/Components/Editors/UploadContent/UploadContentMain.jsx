@@ -717,6 +717,12 @@ const UploadContentMain = () => {
                   <CKEditor
                     // data="Type here..."
                     // config={editorConfig}
+                    config={{
+                      allowedContent: true,
+                      removeFormatAttributes: "",
+                      disallowedContent:false,
+                      extraAllowedContent : '*(*);*{*}'
+                    }}
                     onChange={(evt) => handleEditorChange(evt)}
                     placeholder="Write description here"
                   />

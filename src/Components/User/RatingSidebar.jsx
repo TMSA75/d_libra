@@ -299,7 +299,10 @@ const RatingSidebar = () => {
             </Button>
           )}
 
-          <div className="user_buttons_sub_three">
+          <div className="user_buttons_sub_three"
+            onClick={()=>navigate("/feedback")}
+            style={{cursor:"pointer"}}
+          >
             <span style={{ color: theme ? "  #111111" : " #C8C8C8" }}>
               Make a more specific <br /> feedback on contents
             </span>

@@ -41,6 +41,8 @@
 
 .slick-prev:before,
 .slick-next:before {
+  position: absolute;
+  top: 50%;
   display: block;
   width: 0.75vw;
   height: 0.75vw;
@@ -48,7 +50,7 @@
   border-right: 5px solid #fff;
   color: transparent !important;
   font-family: none !important;
-  transform: rotate(-54deg) translateX(-100%);
+  transform: rotate(-54deg) translateX(-40%) translateY(-70%);
   animation: animate 2s infinite;
   transition: all 0.3s;
   margin-left: 50%;
@@ -61,9 +63,13 @@
 }
 
 .slick-prev:before {
-  transform: rotate(133deg) translateX(50%) !important;
+  transform: rotate(133deg) translateX(10%) translateY(50%) !important;
 }
 
+
+.slick-next:before {
+  transform: rotate(-54deg) translateX(-10%) translateY(-80%) !important;
+}
 .slick-track {
   float: left !important;
 }

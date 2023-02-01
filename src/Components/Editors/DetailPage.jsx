@@ -82,8 +82,10 @@ const DetailPage = () => {
   }, []);
 
   const handleShowAllBookmark = async () => {
-    const response = await dispatch(showAllBoomark(role, token));
-    setShowAllBookmark(response);
+    if (role) {
+      const response = await dispatch(showAllBoomark(role, token));
+      setShowAllBookmark(response);
+    }
   };
 
   const nextTopicFilterIndex = details?.all?.map((topic, index) => {
@@ -117,33 +119,58 @@ const DetailPage = () => {
 
   useEffect(() => {
     const postById = async () => {
-      const response = await dispatch(
-        getPostByID(
-          params?.id,
-          role,
-          params?.categoryid,
-          params?.courseid,
-          token
-        )
-      );
-
-      const nextcategoryResponse = await dispatch(
-        getPostByID(
-          "",
-          "normaluser",
-          response?.nextcategory,
-          params?.courseid,
-          ""
-        )
-      );
-      setChangeChapter(nextcategoryResponse);
-
-      const previouscategoryResponse = await dispatch(
-        getPostByID("", "normaluser", response?.previous, params?.courseid, "")
-      );
-      setPreviousChapter(previouscategoryResponse);
-
-      setDetails(response);
+      let response = null;
+      if (
+        params?.categoryid &&
+        params?.categoryid !== "null" &&
+        params?.courseid !== "null" &&
+        params?.courseid
+      ) {
+        response = await dispatch(
+          getPostByID(
+            params?.id,
+            role,
+            params?.categoryid,
+            params?.courseid,
+            token
+          )
+        );
+        setDetails(response);
+      }
+      if (
+        response?.nextcategory &&
+        response?.nextcategory !== "null" &&
+        params?.courseid &&
+        params?.courseid !== "null"
+      ) {
+        const nextcategoryResponse = await dispatch(
+          getPostByID(
+            "",
+            "normaluser",
+            response?.nextcategory,
+            params?.courseid,
+            ""
+          )
+        );
+        setChangeChapter(nextcategoryResponse);
+      }
+      if (
+        response?.previous &&
+        response?.previous !== "null" &&
+        params?.courseid &&
+        params?.courseid !== "null"
+      ) {
+        const previouscategoryResponse = await dispatch(
+          getPostByID(
+            "",
+            "normaluser",
+            response?.previous,
+            params?.courseid,
+            ""
+          )
+        );
+        setPreviousChapter(previouscategoryResponse);
+      }
     };
 
     postById();
@@ -278,7 +305,25 @@ const DetailPage = () => {
     }
   };
 
+  const updateBookmarkLocally = (details) => {
+    const tempDetails = { ...details };
+    let PriorityType = "";
+    for (let i = 0; i < showAllBookmark?.length; i++) {
+      if (tempDetails?.bookmark?.PriorityType === showAllBookmark?.[i]?.name) {
+        if (i === showAllBookmark?.length - 1) {
+          PriorityType = showAllBookmark?.[0]?.name;
+        } else {
+          PriorityType = showAllBookmark?.[i + 1]?.name;
+        }
+        return;
+      }
+    }
+    tempDetails.bookmark = { PriorityType };
+    setDetails(tempDetails);
+  };
+
   const hanldeBookMarkPriority = async () => {
+    updateBookmarkLocally(details);
     const response = await dispatch(
       addContentBookmark(params?.id, role, token)
     );
@@ -496,25 +541,27 @@ const DetailPage = () => {
                         {token ? (
                           <img
                             src={
-                              details?.bookmark === null
-                                ? Bookmark_grey
-                                : details?.bookmark?.PriorityType ===
-                                  showAllBookmark[0]?.name
-                                ? Bookmark_blue
-                                : details?.bookmark?.PriorityType ===
-                                  showAllBookmark[1]?.name
-                                ? Bookmark_green
-                                : details?.bookmark?.PriorityType ===
-                                  showAllBookmark[2]?.name
-                                ? Bookmark_red
-                                : details?.bookmark?.PriorityType ===
-                                  showAllBookmark[3]?.name
-                                ? Bookmark_yellow
-                                : details?.bookmark?.PriorityType ===
-                                  showAllBookmark[4]?.name
-                                ? Green_Bookmark
-                                : details?.bookmark === "null"
-                                ? Bookmark_grey
+                              params?.id === details?.post?.id?.toString()
+                                ? details?.bookmark === null
+                                  ? Bookmark_grey
+                                  : details?.bookmark?.PriorityType ===
+                                    showAllBookmark[0]?.name
+                                  ? Bookmark_blue
+                                  : details?.bookmark?.PriorityType ===
+                                    showAllBookmark[1]?.name
+                                  ? Bookmark_green
+                                  : details?.bookmark?.PriorityType ===
+                                    showAllBookmark[2]?.name
+                                  ? Bookmark_red
+                                  : details?.bookmark?.PriorityType ===
+                                    showAllBookmark[3]?.name
+                                  ? Bookmark_yellow
+                                  : details?.bookmark?.PriorityType ===
+                                    showAllBookmark[4]?.name
+                                  ? Green_Bookmark
+                                  : details?.bookmark === "null"
+                                  ? Bookmark_grey
+                                  : Bookmark_grey
                                 : Bookmark_grey
                             }
                             alt=""
@@ -619,25 +666,27 @@ const DetailPage = () => {
                           {token ? (
                             <img
                               src={
-                                details?.bookmark === null
-                                  ? Bookmark_grey
-                                  : details?.bookmark?.PriorityType ===
-                                    showAllBookmark[0]?.name
-                                  ? Bookmark_blue
-                                  : details?.bookmark?.PriorityType ===
-                                    showAllBookmark[1]?.name
-                                  ? Bookmark_green
-                                  : details?.bookmark?.PriorityType ===
-                                    showAllBookmark[2]?.name
-                                  ? Bookmark_red
-                                  : details?.bookmark?.PriorityType ===
-                                    showAllBookmark[3]?.name
-                                  ? Bookmark_yellow
-                                  : details?.bookmark?.PriorityType ===
-                                    showAllBookmark[4]?.name
-                                  ? Green_Bookmark
-                                  : details?.bookmark === "null"
-                                  ? Bookmark_grey
+                                params?.id === details?.post?.id?.toString()
+                                  ? details?.bookmark === null
+                                    ? Bookmark_grey
+                                    : details?.bookmark?.PriorityType ===
+                                      showAllBookmark[0]?.name
+                                    ? Bookmark_blue
+                                    : details?.bookmark?.PriorityType ===
+                                      showAllBookmark[1]?.name
+                                    ? Bookmark_green
+                                    : details?.bookmark?.PriorityType ===
+                                      showAllBookmark[2]?.name
+                                    ? Bookmark_red
+                                    : details?.bookmark?.PriorityType ===
+                                      showAllBookmark[3]?.name
+                                    ? Bookmark_yellow
+                                    : details?.bookmark?.PriorityType ===
+                                      showAllBookmark[4]?.name
+                                    ? Green_Bookmark
+                                    : details?.bookmark === "null"
+                                    ? Bookmark_grey
+                                    : Bookmark_grey
                                   : Bookmark_grey
                               }
                               alt=""
@@ -724,25 +773,27 @@ const DetailPage = () => {
                       {token ? (
                         <img
                           src={
-                            details?.bookmark === null
-                              ? Bookmark_grey
-                              : details?.bookmark?.PriorityType ===
-                                showAllBookmark[0]?.name
-                              ? Bookmark_blue
-                              : details?.bookmark?.PriorityType ===
-                                showAllBookmark[1]?.name
-                              ? Bookmark_green
-                              : details?.bookmark?.PriorityType ===
-                                showAllBookmark[2]?.name
-                              ? Bookmark_red
-                              : details?.bookmark?.PriorityType ===
-                                showAllBookmark[3]?.name
-                              ? Bookmark_yellow
-                              : details?.bookmark?.PriorityType ===
-                                showAllBookmark[4]?.name
-                              ? Green_Bookmark
-                              : details?.bookmark === "null"
-                              ? Bookmark_grey
+                            params?.id === details?.post?.id?.toString()
+                              ? details?.bookmark === null
+                                ? Bookmark_grey
+                                : details?.bookmark?.PriorityType ===
+                                  showAllBookmark[0]?.name
+                                ? Bookmark_blue
+                                : details?.bookmark?.PriorityType ===
+                                  showAllBookmark[1]?.name
+                                ? Bookmark_green
+                                : details?.bookmark?.PriorityType ===
+                                  showAllBookmark[2]?.name
+                                ? Bookmark_red
+                                : details?.bookmark?.PriorityType ===
+                                  showAllBookmark[3]?.name
+                                ? Bookmark_yellow
+                                : details?.bookmark?.PriorityType ===
+                                  showAllBookmark[4]?.name
+                                ? Green_Bookmark
+                                : details?.bookmark === "null"
+                                ? Bookmark_grey
+                                : Bookmark_grey
                               : Bookmark_grey
                           }
                           alt=""

@@ -703,7 +703,12 @@ const EditContentMain = () => {
 
                 <CKEditor
                   data={CKEditorState}
-                  // config={editorConfig}
+                  config={{
+                    allowedContent: true,
+                    removeFormatAttributes: "",
+                    disallowedContent:false,
+                    extraAllowedContent : '*(*);*{*}'
+                  }}
                   onChange={(evt) => handleEditorChange(evt)}
                 />
               </div>
