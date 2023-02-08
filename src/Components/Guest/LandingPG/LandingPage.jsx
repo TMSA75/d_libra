@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
-import "./Lp.css";
+import "./Lp.scss";
 import LandingPageImage1 from "../../../assests/SVG_Files/LandingPageImage1.svg";
 import darkmode_logo from "../../../assests/SVG_Files/New folder/darkmode_logo.svg";
 import lightmode_logo from "../../../assests/SVG_Files/New folder/lightmode_logo.svg";
@@ -74,11 +74,12 @@ const LandingPage = () => {
         }
       >
         <div className="underimagecontent">
-          {theme ? (
-            <img src={lightmode_logo} alt="" width="150px" height="30.7" />
-          ) : (
-            <img src={darkmode_logo} alt="" width="150px" height="30.7" />
-          )}
+          <img
+            src={theme ? lightmode_logo : darkmode_logo}
+            alt=""
+            width="150px"
+            height="30.7"
+          />
         </div>
         <span
           className={theme ? "mycontentheadingtwoo" : "mycontentheadingthree"}
@@ -119,9 +120,7 @@ const LandingPage = () => {
                   <div className="content_root_container" key={item?.id}>
                     <div>
                       <span
-                        className={
-                          theme ? "chapternameclass" : "chapternameclasstwo"
-                        }
+                        className= "chapternameclass"
                       >
                         {item?.chaptername.charAt(0).toUpperCase() +
                           item?.chaptername.slice(1)}
@@ -148,9 +147,6 @@ const LandingPage = () => {
                                       noWrap
                                       component="div"
                                       className="subcoursename"
-                                      style={{
-                                        color: theme ? "#363636" : "#FFFFFF",
-                                      }}
                                     >
                                       {e?.CategoryName.charAt(0).toUpperCase() +
                                         e?.CategoryName.slice(1)}
@@ -167,9 +163,6 @@ const LandingPage = () => {
                                 >
                                   <span
                                     className="Author"
-                                    style={{
-                                      color: theme ? "#363636" : "#C8C8C8",
-                                    }}
                                   >
                                     Author: {e?.authorname}
                                   </span>
@@ -201,10 +194,6 @@ const LandingPage = () => {
                                     />
                                     <div
                                       className="rating_text"
-                                      style={{
-                                        paddingLeft: "10px",
-                                        color: theme ? "#363636" : "#C8C8C8",
-                                      }}
                                     >
                                       ({e?.views})
                                     </div>
@@ -271,9 +260,6 @@ const LandingPage = () => {
                                       noWrap
                                       component="div"
                                       className="subcoursename"
-                                      style={{
-                                        color: theme ? "#363636" : "#FFFFFF",
-                                      }}
                                     >
                                       {e?.CategoryName.charAt(0).toUpperCase() +
                                         e?.CategoryName.slice(1)}
@@ -290,9 +276,7 @@ const LandingPage = () => {
                                 >
                                   <span
                                     className="Author"
-                                    style={{
-                                      color: theme ? "#363636" : "#C8C8C8",
-                                    }}
+
                                   >
                                     Author: {e?.authorname}
                                   </span>
@@ -324,10 +308,6 @@ const LandingPage = () => {
                                     />
                                     <div
                                       className="rating_text"
-                                      style={{
-                                        paddingLeft: "10px",
-                                        color: theme ? "#363636" : "#C8C8C8",
-                                      }}
                                     >
                                       ({e?.views})
                                     </div>

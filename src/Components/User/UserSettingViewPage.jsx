@@ -408,7 +408,7 @@ const UserSettingViewPage = () => {
                 message ? (
                   message === "Update Successfully" ? (
                     <div
-                      className={theme ? "successMessage" : "successMessageTwo"}
+                      className="successMessage"
                     >
                       {message}
                     </div>

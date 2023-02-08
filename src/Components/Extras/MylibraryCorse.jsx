@@ -120,7 +120,6 @@ const MylibraryCorse = () => {
         <button
           onClick={handleBack}
           className="back_button librarybackbutton"
-          style={{ color: `${theme ? " #363636" : "  #C8C8C8"}` }}
         >
           <ArrowBack className="backbutton_icon" />{" "}
           <span className="backbutton_text">Back</span>
@@ -232,9 +231,7 @@ const MylibraryCorse = () => {
                                       noWrap
                                       component="div"
                                       className="underimagecontent"
-                                      style={{
-                                        color: theme ? "#363636" : "#FFFFFF",
-                                      }}
+                                    
                                     >
                                       <Typography
                                         noWrap

@@ -1,3 +1,5 @@
+@import "../../../scss/theme";
+
 .landingpagemainunderimage {
   display: flex;
   justify-content: space-between;
@@ -144,12 +146,17 @@
 .rating_text {
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
   display: flex;
   padding-top: 1px;
   align-items: center;
   letter-spacing: -0.015em;
+  padding-left: 0.875rem;
+
+  @include themed {
+    color: t("authorName");
+  }
 }
 
 .tagstwocontainer {
@@ -171,6 +178,11 @@
   align-items: center;
   width: 100%;
   height: 90px;
+
+  margin-top: 2px;
+  @include themed {
+    background-color: t("bgInputFrom");
+  }
 }
 
 .left {
@@ -188,6 +200,9 @@
   display: flex;
   align-items: center;
   letter-spacing: -0.015em;
+  @include themed {
+    background-color: t("courseName");
+  }
 }
 
 .right {
@@ -225,11 +240,8 @@
 }
 
 .recentlyviewedmaincontainer {
-  background: #111111;
   margin-top: -6px;
-  border: 1px solid #111111;
   box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .mycontentheadtwoooo {
@@ -284,25 +296,18 @@
 .recentlyviewedheading {
   font-style: normal;
   font-weight: 700;
-  font-size: 21px;
-  line-height: 24px;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
   display: flex;
   align-items: center;
   letter-spacing: -0.015em;
-  padding-left: 6px;
-  color: #008eec;
+  padding-left: 0.375rem;
+
+  @include themed {
+    color: t("fontSubtitle")
+  }
 }
-.recentlyviewedheadingtwo {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 21px;
-  line-height: 24px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.015em;
-  color: #ffffff;
-  padding-left: 6px;
-}
+
 .maincontainercarousal {
   margin-top: 40px;
 }
@@ -361,36 +366,31 @@
   height: 24.23px !important;
 }
 .subcoursename {
-  font-style: normal !important;
-  font-weight: 700 !important;
-  font-size: 14px !important;
-  line-height: 16px !important;
-  letter-spacing: -0.015em !important;
-  /* width: 250px !important; */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: -0.015em;
+
+  @include themed() {
+    color: t("courseName");
+  }
 }
 .chapternameclass {
-  padding: 0px 0px 8px 0px;
+  padding: 0 0 0.5rem 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
 
-  font-style: normal !important;
-  font-weight: 700 !important;
-  font-size: 18px !important;
-  line-height: 21px !important;
-  display: flex !important;
-  align-items: center !important;
-  letter-spacing: -0.015em !important;
-  color: #008eec !important;
+  @include themed() {
+    color: t("fontSubtitle");
+  }
 }
-.chapternameclasstwo {
-  padding: 0px 0px 8px 0px;
-  font-style: normal !important;
-  font-weight: 700 !important;
-  font-size: 18px !important;
-  line-height: 21px !important;
-  display: flex !important;
-  align-items: center !important;
-  letter-spacing: -0.015em !important;
-  color: #ffffff !important;
-}
+
 .mainContentContainer {
   display: flex;
   align-items: center;
@@ -436,36 +436,26 @@
 .mycontentheadingtwoo {
   font-style: normal !important;
   font-weight: 300 !important;
-  font-size: 21px !important;
-  line-height: 24px !important;
+  font-size: 1.3125rem !important;
+  line-height: 1.5rem !important;
   display: flex !important;
-  margin-top: 50px;
-  margin-bottom: -40px;
+  margin-top: 3.125rem;
+  margin-bottom: -2.5rem;
   align-items: center !important;
   text-align: center !important;
   letter-spacing: -0.015em !important;
-  background: linear-gradient(
-    87.62deg,
-    #004cb6 -44.71%,
-    #009af9 100%
-  ) !important;
+  background: linear-gradient(87.62deg, #004cb6 -44.71%, #009af9 100%);
   -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  -webkit-text-fill-color: transparent;
   background-clip: text !important;
 }
 .mycontentheadingthree {
-  font-style: normal !important;
-  font-weight: 300 !important;
-  font-size: 21px !important;
-  line-height: 24px !important;
-  margin-top: 50px;
-  margin-bottom: -40px;
-  display: flex !important;
-  align-items: center !important;
-  text-align: center !important;
-  letter-spacing: -0.015em !important;
-  color: #ffffff !important;
+  @extend .mycontentheadingtwoo;
+  color: $white-color !important;
+  background: none;
+  -webkit-text-fill-color: inherit;
 }
+
 .intro-slides {
   width: 96% !important;
   height: 100% !important;
@@ -503,16 +493,18 @@
   margin-right: 47px;
 }
 .Author {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 300;
-  line-height: 14px;
+  line-height: 0.875rem;
   letter-spacing: -0.015em;
   text-align: left;
-  color: #c8c8c8;
+  padding: 0.6125rem 0px 0px 0.6125rem;
+  margin-left: -0.6125rem;
 
-  padding: 10px 0px 0px 10px;
-  margin-left: -10px;
+  @include themed {
+    color: t("authorName");
+  }
 }
 .rating {
   font-style: normal;
@@ -573,15 +565,10 @@
 
 @media screen and (max-width: 677px) {
   .rating_text {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.015em;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
   }
-  
+
   .tagsiconcontainer {
     width: 11.67px;
     height: 14px;
@@ -616,33 +603,17 @@
     margin-top: -20px;
   }
   .recentlyviewedheading {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-    padding-bottom: 0px;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.015em;
-    color: #008eec;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    padding-bottom: 0;
   }
-  .recentlyviewedheadingtwo {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: -0.015em;
-    color: #ffffff;
-    padding-bottom: 0px;
-    border: 1px solid #111111;
-  }
+
   .chapternameclass {
-    font-weight: 700 !important;
-    font-size: 14px !important;
-    line-height: 16px !important;
-    letter-spacing: -0.015em !important;
-    color: #008eec !important;
-    padding-left: 8px !important;
-    margin-top: 20px !important;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    letter-spacing: -0.015em;
+    padding-left: 0.5rem;
+    margin-top: 1.25rem;
   }
   .mycontentheadingtwoo {
     font-weight: 300 !important;
@@ -650,15 +621,7 @@
     line-height: 21px !important;
     letter-spacing: -0.015em !important;
   }
-  .chapternameclasstwo {
-    font-weight: 700 !important;
-    font-size: 14px !important;
-    line-height: 16px !important;
-    padding-left: 8px !important;
-    margin-top: 20px !important;
-    letter-spacing: -0.015em !important;
-    color: #ffffff !important;
-  }
+
   .mycontentheadingthree {
     font-weight: 300 !important;
     font-size: 18px !important;
@@ -666,12 +629,7 @@
     letter-spacing: -0.015em !important;
     color: #ffffff !important;
   }
-  .subcoursename {
-    font-weight: 700 !important;
-    font-size: 14px !important;
-    line-height: 16px !important;
-    letter-spacing: -0.015em !important;
-  }
+
   .mycontentheadtwoo {
     font-weight: 700 !important;
     font-size: 16px !important;
@@ -820,9 +778,12 @@
     right: 5px;
   }
 
-  .recentlyviewedmaincontainerlight {
-    background: #f3f6ff;
-    box-shadow: 0px 4px 4px rgba(214, 230, 255, 0.25);
+  .recentlyviewedmaincontainer {
+    @include themed {
+      border: 1px solid t("bodyBg");
+      background-color: t("bodyBg");
+      box-shadow: t("recentlyViewShadow");
+    }
   }
 }
 

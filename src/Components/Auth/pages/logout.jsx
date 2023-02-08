@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Typography } from "@material-ui/core";
 import { ArrowBack } from "@mui/icons-material";
 import { useSelector } from "react-redux";
-import "../Stylesheet/stylesheet.css";
+import "../Stylesheet/stylesheet.scss";
 import { useNavigate } from "react-router-dom";
 
 const Logout = () => {
@@ -19,7 +19,6 @@ const Logout = () => {
       <button
         onClick={handleBack}
         className="back_button"
-        style={{ color: `${theme ? " #363636" : "  #C8C8C8"}` }}
       >
         <ArrowBack className="backbutton_icon" />{" "}
         <span className="backbutton_text">Back</span>

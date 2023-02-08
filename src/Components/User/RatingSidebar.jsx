@@ -214,13 +214,13 @@ const RatingSidebar = () => {
       <div className="ratingform_root_four_five">
         {message === "Rating Course Sucessfully" ? (
           <div>
-            <h4 className={theme ? "successMessage" : "successMessageTwo"}>
+            <h4 className="successMessage">
               Course rated sucessfully
             </h4>
           </div>
         ) : message === "already rated" ? (
           <div>
-            <h4 className={theme ? "successMessage" : "successMessageTwo"}>
+            <h4 className="successMessage">
               Already rated
             </h4>
           </div>

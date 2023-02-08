@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./MyContents.css";
+import "./MyContents.scss";
 import ContentData from "./ContentData";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
-import "./MyContents.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getDashboardData,
@@ -285,14 +284,7 @@ const MyContents = () => {
       >
         <div>
           <div className="mycontentcontainerbackbutton">
-            <button
-              onClick={handleBack}
-              className="back_button"
-              style={{
-                color: `${theme ? " #363636" : "  #C8C8C8"}`,
-                cursor: "pointer",
-              }}
-            >
+            <button onClick={handleBack} className="back_button">
               <ArrowBack className="backbutton_icon" />{" "}
               <span className="backbutton_text">Back</span>
             </button>
@@ -385,9 +377,6 @@ const MyContents = () => {
                                     noWrap
                                     component="div"
                                     className="underimagecontent"
-                                    style={{
-                                      color: theme ? "#363636" : "#FFFFFF",
-                                    }}
                                   >
                                     <Typography
                                       noWrap
@@ -496,9 +485,6 @@ const MyContents = () => {
                                         noWrap
                                         component="div"
                                         className="underimagecontent"
-                                        style={{
-                                          color: theme ? "#363636" : "#FFFFFF",
-                                        }}
                                       >
                                         <Typography
                                           noWrap

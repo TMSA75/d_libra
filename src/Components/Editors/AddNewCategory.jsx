@@ -309,7 +309,6 @@ const AddNewCategory = () => {
       <button
         onClick={handleBack}
         className="back_button"
-        style={{ color: `${theme ? " #363636" : "  #C8C8C8"}` }}
       >
         <ArrowBack className="backbutton_icon" />{" "}
         <span className="backbutton_text">Back</span>
@@ -321,7 +320,7 @@ const AddNewCategory = () => {
             <div className="errorMessage">{message}</div>
           ) : message ? (
             message === "Add Sub Categroy Successfully" ? (
-              <div className={theme ? "successMessage" : "successMessageTwo"}>
+              <div className="successMessage">
                 Sub category added successfully
               </div>
             ) : message === "All Fields are Required" ? (
@@ -333,7 +332,7 @@ const AddNewCategory = () => {
               )
             )
           ) : message === "Add successfully" ? (
-            <div className={theme ? "successMessage" : "successMessageTwo"}>
+            <div className="successMessage">
               Category added successfully
             </div>
           ) : message === "Please choose a unique id" ? (
@@ -345,11 +344,11 @@ const AddNewCategory = () => {
           ) : message === "Slug Name Already Exist" ? (
             <div className="errorMessage">{message}</div>
           ) : message === "Add Chapters Successfully" ? (
-            <div className={theme ? "successMessage" : "successMessageTwo"}>
+            <div className="successMessage">
               Chapter added successfully
             </div>
           ) : message === "Add Course Successfully" ? (
-            <div className={theme ? "successMessage" : "successMessageTwo"}>
+            <div className="successMessage">
               Course added successfully
             </div>
           ) : message === "Please choose a unique id" ? (

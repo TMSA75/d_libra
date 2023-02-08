@@ -4,7 +4,7 @@ import { ArrowBack } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import googleIcon from "../../../assests/google.png";
 import { useDispatch, useSelector } from "react-redux";
-import "../Stylesheet/stylesheet.css";
+import "../Stylesheet/stylesheet.scss";
 import { logInWithGoogle, signUp } from "../../../Redux/Actions/auth.action";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
@@ -97,7 +97,6 @@ const Register = () => {
       <button
         onClick={handleBack}
         className="back_button"
-        style={{ color: `${theme ? " #363636" : "  #C8C8C8"}` }}
       >
         <ArrowBack className="backbutton_icon" />{" "}
         <span className="backbutton_text">Back</span>
@@ -109,7 +108,7 @@ const Register = () => {
             <div className="errorMessage">Feilds cannot be empty!</div>
           ) : message ? (
             message === "Account Created Successfully" ? (
-              <div className={theme ? "successMessage" : "successMessageTwo"}>
+              <div className="successMessage">
                 Verification link has been sent to your email <br />{" "}
                 <h4 style={{ color: theme ? "blue" : "yellow" }}>{email}</h4>
                 Please verify your email to login.

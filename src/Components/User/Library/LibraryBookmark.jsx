@@ -295,11 +295,6 @@ const LibraryBookmark = () => {
                                             noWrap
                                             component="div"
                                             className="underimagecontent"
-                                            style={{
-                                              color: theme
-                                                ? "#363636"
-                                                : "#FFFFFF",
-                                            }}
                                           >
                                             <Typography
                                               noWrap

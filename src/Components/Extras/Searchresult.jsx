@@ -11,7 +11,7 @@ import Green_Bookmark from "../../assests/SVG_Files/New folder/Green_Bookmark.sv
 import Search from "../../assests/SVG_Files/New folder/icons/Search.svg";
 import Search_dark from "../../assests/SVG_Files/New folder/icons/Search_dark.svg";
 import { searchAction } from "../../Redux/Actions/Client Side/search.action";
-import "../Guest/LandingPG/Lp.css";
+import "../Guest/LandingPG/Lp.scss";
 import FooterButtons from "../User/FooterButtons";
 import Searchdata from "./Searchdata";
 import Grid from "@mui/material/Grid";
@@ -250,7 +250,6 @@ const Searchresult = () => {
         <button
           onClick={handleBack}
           className="back_button"
-          style={{ color: `${theme ? " #363636" : "  #C8C8C8"}` }}
         >
           <ArrowBack className="backbutton_icon" />{" "}
           <span className="backbutton_text">Back</span>
@@ -258,19 +257,9 @@ const Searchresult = () => {
         <div className="mainContentContainer recentlyreviewed">
           <div className="searchresultsection">
             <div style={{ display: "flex", alignItems: "center" }}>
-              {theme ? (
-                <img src={Search} alt="error" className="recentlyviewedimage" />
-              ) : (
-                <img
-                  src={Search_dark}
-                  alt="error"
-                  className="recentlyviewedimage"
-                />
-              )}
+                <img src={theme?Search:Search_dark} alt="error" className="recentlyviewedimage" />
               <span
-                className={
-                  theme ? " recentlyviewedheading" : "recentlyviewedheadingtwo"
-                }
+                className="recentlyviewedheading"
               >
                 Results for '
                 {location.search?.split("=")[2]?.replace(/[^a-zA-Z ]/g, " ")}'
@@ -335,9 +324,7 @@ const Searchresult = () => {
                                       noWrap
                                       component="div"
                                       className="underimagecontent"
-                                      style={{
-                                        color: theme ? "#363636" : "#FFFFFF",
-                                      }}
+
                                     >
                                       <Typography
                                         noWrap
@@ -431,19 +418,10 @@ const Searchresult = () => {
                         return (
                           <div
                             className="W-main-map"
-                            style={{
-                              marginTop: "2px",
-                              backgroundColor: `${
-                                theme ? "#f3f6ff" : "   #4f4f4f "
-                              }`,
-                            }}
                           >
                             <div className="left">
                               <p
                                 className="left_p"
-                                style={{
-                                  color: theme ? " #363636" : "  #ffffff",
-                                }}
                               >
                                 {e.title}
                               </p>

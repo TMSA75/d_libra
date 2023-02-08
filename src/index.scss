@@ -1,0 +1,60 @@
+@import "./scss/theme";
+
+.Theme {
+  padding-top: 58px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.darkTheme {
+  background-color: $BG_Body_Dark;
+  color: $Text_Body_Dark;
+}
+
+.lightTheme {
+  background-color: $BG_Body_Light;
+  color: $Text_Body_Light;
+}
+
+.CreamyTheme {
+  color: $Text_Body_Light;
+  background-color: $BG_Body_Creamy !important;
+}
+
+* {
+  margin: 0;
+  /* padding: 0; */
+  box-sizing: border-box;
+  font-family: Helvetica !important;
+}
+
+@media screen and (max-width: 430px) {
+  .Theme {
+    /* padding: 40px 0px 0px 0px; */
+    height: 0vh;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .Theme {
+    padding: 40px 0px 0px 0px;
+    /* height: 0vh; */
+  }
+}
+
+
+.successMessage {
+  @include themed {
+    color: t("successMessage");
+    border: 2px solid t("successMessage");
+  }
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}

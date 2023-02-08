@@ -216,7 +216,6 @@ const Feedback = () => {
       <button
         onClick={handleBack}
         className="back_button"
-        style={{ color: `${theme ? " #363636" : " #FFFFFF"}` }}
       >
         <ArrowBack className="backbutton_icon" />{" "}
         <span className="backbutton_text">Back</span>
@@ -225,9 +224,9 @@ const Feedback = () => {
         {message === "topicid,opinion is required" ? (
           <div className="errorMessage">Feilds cannot be empty!</div>
         ) : message === "Response recorded" ? (
-          <div className={theme ? "successMessage" : "successMessageTwo"}>
+          <div className="successMessage">
             Feedback recorded successfully
-          </div>  
+          </div>
         ) : message === "response already recorded" ? (
           <div className="errorMessage">Response already recorded</div>
         ) : null}

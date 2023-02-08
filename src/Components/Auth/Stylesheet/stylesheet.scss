@@ -1,3 +1,5 @@
+@import "../../../scss/theme";
+
 .editomainpage_container {
   padding-top: 20px;
   display: flex;
@@ -148,13 +150,17 @@
 .back_button {
   background: transparent;
   border: none;
-  padding-left: 12px;
-  padding-top: 7px !important;
+  padding-left: 0.75rem;
+  padding-top: 0.5rem !important;
   cursor: pointer;
   font-style: normal;
   display: flex;
   align-items: center;
   text-align: center;
+
+  @include themed {
+    color: t("authorName")
+  }
 }
 
 .image_button {
@@ -468,25 +474,7 @@
   -webkit-mask-image: linear-gradient(87.62deg, #004cb6 -44.71%, #009af9 100%);
 }
 
-.successMessage {
-  color: green;
-  padding: 10px;
-  width: 100%;
-  border: 2px solid green;
-  text-align: center;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
 
-.successMessageTwo {
-  color: white;
-  padding: 10px;
-  width: 100%;
-  border: 2px solid white;
-  text-align: center;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
 
 .errorMessage {
   color: red;
@@ -537,7 +525,7 @@
   }
 
   .back_button {
-    padding-top: 9px !important;
+    padding-top: 0.6rem !important;
   }
 
   .backbutton_text {

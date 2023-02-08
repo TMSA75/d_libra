@@ -20,7 +20,7 @@ import {
 import Grid from "@mui/material/Grid";
 import { addRecenetViewContent } from "../../Redux/Actions/Client Side/content.action";
 import { searchAction } from "../../Redux/Actions/Client Side/search.action";
-import "../Guest/LandingPG/Lp.css";
+import "../Guest/LandingPG/Lp.scss";
 import FooterButtons from "../User/FooterButtons";
 import TgpageData from "./TgpageData";
 
@@ -263,26 +263,16 @@ const Tagpage = () => {
   return (
     <>
       <div className={theme ? "" : "recentlyviewedmaincontainer"}>
-        <button
-          onClick={handleBack}
-          className="back_button"
-          style={{ color: `${theme ? " #363636" : "  #C8C8C8"}` }}
-        >
+        <button onClick={handleBack} className="back_button">
           <ArrowBack className="backbutton_icon" />{" "}
           <span className="backbutton_text">Back</span>
         </button>
         <div className="mainContentContainer recentlyreviewed">
           <div className="searchresultsection">
             <div style={{ display: "flex", alignItems: "center" }}>
-              {theme ? (
-                <img src={Tag_light} alt="" className="recentlyviewedimage" />
-              ) : (
-                <img src={Tag_dark} alt="" className="recentlyviewedimage" />
-              )}
+                <img src={theme?Tag_light:Tag_dark} alt="" className="recentlyviewedimage" />
               <span
-                className={
-                  theme ? " recentlyviewedheading" : "recentlyviewedheadingtwo"
-                }
+                className="recentlyviewedheading"
               >
                 Tag '{params?.tag?.replace("-", " ")}'
               </span>
@@ -336,9 +326,6 @@ const Tagpage = () => {
                               noWrap
                               component="div"
                               className="underimagecontent"
-                              style={{
-                                color: theme ? "#363636" : "#FFFFFF",
-                              }}
                             >
                               <Typography
                                 noWrap
@@ -415,15 +402,10 @@ const Tagpage = () => {
                 return (
                   <div
                     className="W-main-map"
-                    style={{
-                      marginTop: "2px",
-                      backgroundColor: `${theme ? "#f3f6ff" : "   #4f4f4f "}`,
-                    }}
                   >
                     <div className="left">
                       <p
                         className="left_p"
-                        style={{ color: theme ? " #363636" : "  #ffffff" }}
                       >
                         {e.title}
                       </p>

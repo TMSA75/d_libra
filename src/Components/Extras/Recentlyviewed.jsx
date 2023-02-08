@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "../Guest/LandingPG/Lp.css";
+import "../Guest/LandingPG/Lp.scss";
 import { development } from "../../endpoints";
 import RVector from "../../assests/RVector.png";
 import { Typography } from "@material-ui/core";
@@ -109,17 +109,10 @@ const Recentlyviewed = () => {
 
   return (
     <>
-      <div
-        className={
-          theme
-            ? "recentlyviewedmaincontainerlight"
-            : "recentlyviewedmaincontainer"
-        }
-      >
+      <div className="recentlyviewedmaincontainer">
         <button
           onClick={handleBack}
           className="back_button"
-          style={{ color: `${theme ? " #363636" : "  #C8C8C8"}` }}
         >
           <ArrowBack className="backbutton_icon" />{" "}
           <span className="backbutton_text">Back</span>
@@ -127,23 +120,14 @@ const Recentlyviewed = () => {
         <div className="mainContentContainer recentlyreviewed">
           <div className="recentlyviewedsection">
             <div style={{ display: "flex", alignItems: "center" }}>
-              {theme ? (
                 <img
-                  src={Group89Blue}
+                  src={theme ? Group89Blue: RVector}
                   alt="error"
                   className="recentlyviewedimage"
                 />
-              ) : (
-                <img
-                  src={RVector}
-                  alt="error"
-                  className="recentlyviewedimage"
-                />
-              )}
               <span
-                className={
-                  theme ? " recentlyviewedheading" : "recentlyviewedheadingtwo"
-                }
+                className=" recentlyviewedheading"
+
               >
                 Recently Viewed
               </span>
@@ -159,9 +143,7 @@ const Recentlyviewed = () => {
               <div className="content_root_container">
                 <div>
                   <span
-                    className={
-                      theme ? "chapternameclass" : "chapternameclasstwo"
-                    }
+                    className= "chapternameclass"
                   >
                     {day?.chapterName}
                   </span>
@@ -206,9 +188,7 @@ const Recentlyviewed = () => {
                                   noWrap
                                   component="div"
                                   className="underimagecontent"
-                                  style={{
-                                    color: theme ? "#363636" : "#FFFFFF",
-                                  }}
+                                 
                                 >
                                   <Typography
                                     noWrap

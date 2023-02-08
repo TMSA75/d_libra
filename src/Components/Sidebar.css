@@ -3,25 +3,6 @@
   height: 20.47px;
 }
 
-.successMessage {
-  color: green !important;
-  padding: 10px;
-  width: 100%;
-  border: 2px solid green;
-  text-align: center;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
-.successMessageTwo {
-  color: white;
-  padding: 10px;
-  width: 100%;
-  border: 2px solid white;
-  text-align: center;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
 
 .errorMessage {
   color: red;
@@ -943,7 +924,7 @@
   .logo_main_container_landing_role_editor {
     padding-left: 117px;
 
-    
+
   }
 
   .logo_main_container_DarkEditor {

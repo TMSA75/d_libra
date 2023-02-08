@@ -32,7 +32,6 @@ import ForgetPassword from "./Components/Auth/pages/forget-password";
 import ChangePassword from "./Components/Auth/pages/change-password";
 
 import { useSelector } from "react-redux";
-import "./index.css";
 import MylibraryCorse from "./Components/Extras/MylibraryCorse";
 import Tagpage from "./Components/Extras/Tagpage";
 import Searchresult from "./Components/Extras/Searchresult";
@@ -67,7 +66,7 @@ function App() {
       (window.location.href.split("/")[3] === "editcoursestructure" &&
         theme === false)
     ) {
-      document.body.style.backgroundColor = "#111111";
+      // document.body.style.backgroundColor = "#111111";
       return "darkTheme";
     } else if (
       (window.location.href.split("/")[3]?.includes("mycontents") &&
@@ -79,20 +78,20 @@ function App() {
       (window.location.href.split("/")[3] === "editcoursestructure" &&
         theme === true)
     ) {
-      document.body.style.backgroundColor = "#eeeeee";
+      // document.body.style.backgroundColor = "#eeeeee";
       return "CreamyTheme";
     } else if (theme === true) {
-      document.body.style.backgroundColor = "#F3F6FF";
+      // document.body.style.backgroundColor = "#F3F6FF";
       return "lightTheme";
     } else {
-      document.body.style.backgroundColor = "#111111";
+      // document.body.style.backgroundColor = "#111111";
       return "darkTheme";
     }
   };
 
   return (
     <>
-      <div className={backgroundHanlde()}>
+      <div className={`Theme ${backgroundHanlde()}`}>
         {/* <Helmet>
           <title>Detail Page</title>
           <meta name="description" content="jjjj"></meta>

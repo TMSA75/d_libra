@@ -1,0 +1,72 @@
+// colors
+
+$BG_Body_Light: #F3F6FF;
+$BG_Body_Dark: #111111;
+$BG_Body_Creamy: #eeeeee;
+$Text_Body_Dark: white;
+$Text_Body_Light: black;
+$white-color: #ffffff;
+$Font_Subtitle_Light: #008EEC;
+$Font_Body_Light: #363636;
+$Font_Body_Dark: #c8c8c8;
+$Recently_View_Shadow_Light: 0px 4px 4px rgba(214, 230, 255, 0.25);
+$Recently_View_Shadow_Dark: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$BG_Input_Form_Dark:#4F4F4F;
+$Success_Message_Light:green;
+$Success_Message_Dark:white;
+
+
+
+
+$themes: (
+  light: (
+    bodyBg: $BG_Body_Light,
+    bodyBgCreamy: $BG_Body_Creamy,
+    bodyText: $Text_Body_Light,
+    fontSubtitle: $Font_Subtitle_Light,
+    courseName: $Font_Body_Light,
+    authorName: $Font_Body_Light,
+    recentlyViewShadow: $Recently_View_Shadow_Light,
+    bgInputFrom:$BG_Body_Light,
+    successMessage:$Success_Message_Light,
+
+
+  ),
+  dark: (
+    bodyBg: $BG_Body_Dark,
+    bodyBgCreamy: $BG_Body_Dark,
+    bodyText: $Text_Body_Dark,
+    fontSubtitle: $white-color,
+    courseName: $white-color,
+    authorName: $Font_Body_Dark,
+    recentlyViewShadow: $Recently_View_Shadow_Dark,
+    bgInputFrom:$BG_Input_Form_Dark,
+    successMessage:$Success_Message_Dark,
+
+
+
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

@@ -3,7 +3,7 @@ import { Button } from "@material-ui/core";
 import { ArrowBack } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import "../Stylesheet/stylesheet.css";
+import "../Stylesheet/stylesheet.scss";
 import { changePassword } from "../../../Redux/Actions/auth.action";
 import { editorChangePassword } from "../../../Redux/Actions/Editor/auth.action";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
@@ -75,7 +75,6 @@ const ChangePassword = () => {
       <button
         onClick={handleBack}
         className="back_button"
-        style={{ color: `${theme ? " #363636" : "  #C8C8C8"}` }}
       >
         <ArrowBack className="backbutton_icon" />
         <span className="backbutton_text">Back</span>
@@ -93,7 +92,7 @@ const ChangePassword = () => {
               message ? (
                 message === "Password Update Successfully" ? (
                   <div
-                    className={theme ? "successMessage" : "successMessageTwo"}
+                    className="successMessage"
                   >
                     {message}
                   </div>

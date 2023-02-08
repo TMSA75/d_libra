@@ -3,7 +3,7 @@ import { Button } from "@material-ui/core";
 import { ArrowBack } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import "../Stylesheet/stylesheet.css";
+import "../Stylesheet/stylesheet.scss";
 import {
   forgetPassword,
   sendVerificationCode,
@@ -133,7 +133,6 @@ const ForgetPassword = () => {
       <button
         onClick={handleBack}
         className="back_button"
-        style={{ color: `${theme ? " #363636" : "  #C8C8C8"}` }}
       >
         <ArrowBack className="backbutton_icon" />
         <span className="backbutton_text">Back</span>
@@ -175,7 +174,7 @@ const ForgetPassword = () => {
               message === "Invalid Code" ? (
                 <div className="errorMessage">{message}</div>
               ) : message === "Please Check Your Email" ? (
-                <div className={theme ? "successMessage" : "successMessageTwo"}>
+                <div className="successMessage">
                   An email with verification code has been sent to
                   <h4 style={{ color: theme ? "blue" : "yellow" }}>{email}</h4>
                 </div>
@@ -194,7 +193,7 @@ const ForgetPassword = () => {
                   Please enter your registered email
                 </div>
               ) : message === "Code verified successfully" ? (
-                <div className={theme ? "successMessage" : "successMessageTwo"}>
+                <div className="successMessage">
                   Code verified successfully. Wait you are redirecting...
                 </div>
               ) : null

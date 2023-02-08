@@ -4,7 +4,7 @@ import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import googleIcon from "../../../assests/google.png";
-import "../Stylesheet/stylesheet.css";
+import "../Stylesheet/stylesheet.scss";
 import { logIn, logInWithGoogle } from "../../../Redux/Actions/auth.action";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
@@ -105,7 +105,6 @@ const Login = () => {
       <button
         onClick={handleBack}
         className="back_button"
-        style={{ color: `${theme ? " #363636" : "  #C8C8C8"}` }}
       >
         <ArrowBack className="backbutton_icon" />{" "}
         <span className="backbutton_text">Back</span>

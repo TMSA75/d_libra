@@ -253,26 +253,6 @@
   margin-top: -10px;
 }
 
-.successMessage {
-  color: green !important;
-  padding: 10px;
-  width: 100%;
-  border: 2px solid green;
-  text-align: center;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
-.successMessageTwo {
-  color: white;
-  padding: 10px;
-  width: 100%;
-  border: 2px solid white;
-  text-align: center;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
 .errorMessage {
   color: red;
   padding: 10px;
