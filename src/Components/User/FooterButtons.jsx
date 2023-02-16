@@ -23,6 +23,12 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import History_off from "../../assests/SVG_Files/New folder/icons/Popup_History_off.svg";
 import { viewCourseStatus } from "../../Redux/Actions/Client Side/course.action";
+
+import RatingIcon from "../../assests/SVG_Files/userActionIcons/StarIcon.svg";
+import HistoryIcon from "../../assests/SVG_Files/userActionIcons/HistoryIcon.svg";
+import ShareIcon from "../../assests/SVG_Files/userActionIcons/ShareIcon.svg";
+import LibraryIcon from "../../assests/SVG_Files/userActionIcons/LibraryIcon.svg";
+
 const drawerBleeding = 56;
 const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "light" ? "#fff" : grey[800],
@@ -112,39 +118,95 @@ const FooterButtons = (props) => {
         >
           {history?.length > 0 ? (
             <>
-              <img
-                src={History}
-                alt=""
-                className="footerbuttonimages"
+              <div
+                className="userBasicActShorWrapper userBasicActShorWrapperActive"
                 onClick={hanldeNavigateToHistory}
-              />
-              <img
-                src={MyLibrary}
-                alt=""
-                className="footerbuttonimages"
+              >
+                <div>
+                  <img
+                    src={HistoryIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">history</div>
+                </div>
+              </div>
+              <div
+                className="userBasicActShorWrapper userBasicActShorWrapperActive"
                 onClick={() => navigate("/mylibrarycourses")}
-              />
-              <img
-                src={Rating}
-                alt=""
-                className="footerbuttonimages"
+              >
+                <div>
+                  <img
+                    src={LibraryIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">Library</div>
+                </div>
+              </div>
+              <div
+                className="userBasicActShorWrapper userBasicActShorWrapperActive"
                 onClick={hanldeRatingNavigate}
-              />
+              >
+                <div>
+                  <img
+                    src={RatingIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">rating</div>
+                </div>
+              </div>
             </>
           ) : (
             <>
-              <img src={History_off} alt="" className="footerbuttonimages" />
-              <img src={MyLibrary_off} alt="" className="footerbuttonimages" />
-              <img src={Rating_off} alt="" className="footerbuttonimages" />
+              <div className="userBasicActShorWrapper">
+                <div>
+                  <img
+                    src={HistoryIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">history</div>
+                </div>
+              </div>
+              <div className="userBasicActShorWrapper">
+                <div>
+                  <img
+                    src={LibraryIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">Library</div>
+                </div>
+              </div>
+              <div className="userBasicActShorWrapper">
+                <div>
+                  <img
+                    src={RatingIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">rating</div>
+                </div>
+              </div>
+
+              {/* <img src={History_off} alt="" className="footerbuttonimages" /> */}
+              {/* <img src={MyLibrary_off} alt="" className="footerbuttonimages" /> */}
+              {/* <img src={Rating_off} alt="" className="footerbuttonimages" /> */}
             </>
           )}
 
-          <img
-            src={Share}
-            onClick={toggleDrawer(true)}
-            alt=""
-            className="footerbuttonimages"
-          />
+          <div className="userBasicActShorWrapper userBasicActShorWrapperActive"  onClick={toggleDrawer(true)}>
+            <div>
+              <img
+                src={ShareIcon}
+                alt=""
+                className="userBasicActShorWrapperImage"
+              />
+              <div className="userBasicActShorWrapperText">Share</div>
+            </div>
+          </div>
         </div>
         <div className="mobile_view_button">
           <div style={{ display: footerbutton ? "block" : "none" }}>
@@ -157,65 +219,99 @@ const FooterButtons = (props) => {
             >
               {history?.length > 0 ? (
                 <>
-                  <img
-                    src={History}
-                    alt=""
-                    style={{ cursor: "pointer" }}
-                    width="50px"
-                    height="50px"
+                  <div
+                    className="userBasicActShorWrapper userBasicActShorWrapperActive"
                     onClick={hanldeNavigateToHistory}
-                  />
-                  <img
-                    src={MyLibrary}
-                    alt=""
-                    style={{ cursor: "pointer" }}
-                    width="50px"
-                    height="50px"
+                  >
+                    <div>
+                      <img
+                        src={HistoryIcon}
+                        alt=""
+                        className="userBasicActShorWrapperImage"
+                      />
+                      <div className="userBasicActShorWrapperText">history</div>
+                    </div>
+                  </div>
+                  <div
+                    className="userBasicActShorWrapper userBasicActShorWrapperActive"
                     onClick={() => navigate("/mylibrarycourses")}
-                  />
-                  <img
-                    src={Rating}
-                    alt=""
-                    style={{ cursor: "pointer" }}
-                    width="50px"
-                    height="50px"
+                  >
+                    <div>
+                      <img
+                        src={LibraryIcon}
+                        alt=""
+                        className="userBasicActShorWrapperImage"
+                      />
+                      <div className="userBasicActShorWrapperText">Library</div>
+                    </div>
+                  </div>
+                  <div
+                    className="userBasicActShorWrapper userBasicActShorWrapperActive"
                     onClick={hanldeRatingNavigate}
-                  />
+                  >
+                    <div>
+                      <img
+                        src={RatingIcon}
+                        alt=""
+                        className="userBasicActShorWrapperImage"
+                      />
+                      <div className="userBasicActShorWrapperText">rating</div>
+                    </div>
+                  </div>
                 </>
               ) : (
                 <>
-                  <img
-                    src={History_off}
-                    alt=""
-                    style={{ cursor: "pointer" }}
-                    width="50px"
-                    height="50px"
-                  />
-                  <img
-                    src={MyLibrary_off}
-                    alt=""
-                    style={{ cursor: "pointer" }}
-                    width="50px"
-                    height="50px"
-                  />
-                  <img
-                    src={Rating_off}
-                    alt=""
-                    style={{ cursor: "pointer" }}
-                    width="50px"
-                    height="50px"
-                  />
+                  <div className="userBasicActShorWrapper">
+                    <div>
+                      <img
+                        src={HistoryIcon}
+                        alt=""
+                        className="userBasicActShorWrapperImage"
+                      />
+                      <div className="userBasicActShorWrapperText">history</div>
+                    </div>
+                  </div>
+                  <div className="userBasicActShorWrapper">
+                    <div>
+                      <img
+                        src={LibraryIcon}
+                        alt=""
+                        className="userBasicActShorWrapperImage"
+                      />
+                      <div className="userBasicActShorWrapperText">Library</div>
+                    </div>
+                  </div>
+                  <div className="userBasicActShorWrapper">
+                    <div>
+                      <img
+                        src={RatingIcon}
+                        alt=""
+                        className="userBasicActShorWrapperImage"
+                      />
+                      <div className="userBasicActShorWrapperText">rating</div>
+                    </div>
+                  </div>
                 </>
               )}
 
-              <img
+              {/* <img
                 src={Share}
                 onClick={toggleDrawer(true)}
                 alt=""
                 style={{ cursor: "pointer" }}
                 width="50px"
                 height="50px"
-              />
+              /> */}
+              <div className="userBasicActShorWrapper userBasicActShorWrapperActive"  onClick={toggleDrawer(true)}>
+                <div>
+                  <img
+                    src={ShareIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">Share</div>
+                </div>
+              </div>
             </div>
             <SwipeableDrawer
               className="footer-drawer"

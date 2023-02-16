@@ -20,6 +20,11 @@ import Icon_whatsapp from "../../../assests/SVG_Files/New folder/icons/Icon_what
 import { useNavigate } from "react-router-dom";
 import ReactWhatsapp from "react-whatsapp";
 
+import RatingIcon from "../../../assests/SVG_Files/userActionIcons/StarIcon.svg";
+import HistoryIcon from "../../../assests/SVG_Files/userActionIcons/HistoryIcon.svg";
+import ShareIcon from "../../../assests/SVG_Files/userActionIcons/ShareIcon.svg";
+import LibraryIcon from "../../../assests/SVG_Files/userActionIcons/LibraryIcon.svg";
+
 const drawerBleeding = 56;
 const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "light" ? "#fff" : grey[800],
@@ -83,27 +88,58 @@ const FooterButtons = (props) => {
     <>
       <div>
         <div className="footer_buttons_container">
-          <img
-            src={Popup_History_off}
-            alt=""
-            className="footerbuttonimages"
+          <div
+            className="userBasicActShorWrapper"
             onClick={() => navigate("/Recentlyviewed")}
-          />
-
-          <img
-            src={Popup_My_library_off}
-            alt=""
-            className="footerbuttonimages"
+          >
+            <div>
+              <img
+                src={HistoryIcon}
+                alt=""
+                className="userBasicActShorWrapperImage"
+              />
+              <div className="userBasicActShorWrapperText">history</div>
+            </div>
+          </div>
+          
+          <div
+            className="userBasicActShorWrapper"
             onClick={() => navigate("/MyLibraryCorse")}
-          />
+          >
+            <div>
+              <img
+                src={LibraryIcon}
+                alt=""
+                className="userBasicActShorWrapperImage"
+              />
+              <div className="userBasicActShorWrapperText">Library</div>
+            </div>
+          </div>
 
-          <img src={Popup_Rating_off} alt="" className="footerbuttonimages" />
-          <img
-            src={Popup_Share}
+          <div className="userBasicActShorWrapper">
+            <div>
+              <img
+                src={RatingIcon}
+                alt=""
+                className="userBasicActShorWrapperImage"
+              />
+              <div className="userBasicActShorWrapperText">rating</div>
+            </div>
+          </div>
+
+          <div
             onClick={toggleDrawer(true)}
-            alt=""
-            className="footerbuttonimages"
-          />
+            className="userBasicActShorWrapper userBasicActShorWrapperActive"
+          >
+            <div>
+              <img
+                src={ShareIcon}
+                alt=""
+                className="userBasicActShorWrapperImage"
+              />
+              <div className="userBasicActShorWrapperText">Share</div>
+            </div>
+          </div>
         </div>
 
         <div className="mobile_view_button">
@@ -115,31 +151,55 @@ const FooterButtons = (props) => {
                 marginLeft: "30px",
               }}
             >
-              <img
-                src={Popup_History_off}
-                alt=""
-                className="footerbuttonimages"
+              <div
+                className="userBasicActShorWrapper"
                 onClick={() => navigate("/Recentlyviewed")}
-              />
-
-              <img
-                src={Popup_My_library_off}
-                alt=""
-                className="footerbuttonimages"
+              >
+                <div>
+                  <img
+                    src={HistoryIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">history</div>
+                </div>
+              </div>
+              <div
+                className="userBasicActShorWrapper"
                 onClick={() => navigate("/MyLibraryCorse")}
-              />
-
-              <img
-                src={Popup_Rating_off}
-                alt=""
-                className="footerbuttonimages"
-              />
-              <img
-                src={Popup_Share}
+              >
+                <div>
+                  <img
+                    src={LibraryIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">Library</div>
+                </div>
+              </div>
+              <div className="userBasicActShorWrapper">
+                <div>
+                  <img
+                    src={RatingIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">rating</div>
+                </div>
+              </div>
+              <div
                 onClick={toggleDrawer(true)}
-                alt=""
-                className="footerbuttonimages"
-              />
+                className="userBasicActShorWrapper userBasicActShorWrapperActive"
+              >
+                <div>
+                  <img
+                    src={ShareIcon}
+                    alt=""
+                    className="userBasicActShorWrapperImage"
+                  />
+                  <div className="userBasicActShorWrapperText">Share</div>
+                </div>
+              </div>
             </div>
 
             <SwipeableDrawer

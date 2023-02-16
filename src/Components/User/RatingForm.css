@@ -11,8 +11,6 @@
   margin-left: 24px;
 }
 
-
-
 .errorMessage {
   color: red;
   padding: 10px;
@@ -53,6 +51,35 @@
   -o-object-fit: contain !important;
   width: 50px !important;
   height: 50px !important;
+}
+
+.userBasicActShorWrapper {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #c4c4c4;
+  margin-right: 11px;
+}
+
+.userBasicActShorWrapperActive {
+  background: linear-gradient(87.62deg, #004cb6 -44.71%, #009af9 100%);
+}
+
+.userBasicActShorWrapperImage {
+  width: 25px;
+  height: 22.67px;
+  display: block;
+  margin: auto;
+  margin-bottom: 2.8px;
+}
+.userBasicActShorWrapperText {
+  font-weight: 300;
+  font-size: 10px;
+  color: #ffffff;
 }
 
 .userdetailpinimage {
