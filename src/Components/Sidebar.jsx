@@ -24,8 +24,8 @@ import UnionClose from "../assests/UnionClose.png";
 import UnionBlue from "../assests/UnionBlue.png";
 import Arrow_white from "../assests/Arrow_white.png";
 import editor_icon from "../assests/SVG_Files/editor_icon.svg";
-import darkmode_logo from "../assests/SVG_Files/New folder/darkmode_logo.svg";
-import lightmode_logo from "../assests/SVG_Files/New folder/lightmode_logo.svg";
+import darkmode_logo from "../assests/SVG_Files/New Logo/Dark.svg";
+import lightmode_logo from "../assests/SVG_Files/New Logo/Light.svg";
 import Sidebar_My_library from "../assests/SVG_Files/New folder/icons/Sidebar_My_library.svg";
 import Sidebar_Signup from "../assests/SVG_Files/New folder/icons/Sidebar_Signup.svg";
 import Sidebar_Login from "../assests/SVG_Files/New folder/icons/Sidebar_Login.svg";
@@ -883,7 +883,7 @@ export default function Sidebar() {
                   : role === "editor" &&
                     location.pathname !== "/" &&
                     themeState &&
-                    location.pathname !== "/mylibrarycourses" && 
+                    location.pathname !== "/mylibrarycourses" &&
                     location.pathname !== "/addnewcategory"
                   ? "logo_main_container_some_pages"
                   : role === "editor" &&
@@ -934,11 +934,11 @@ export default function Sidebar() {
                     src={lightmode_logo}
                     alt=""
                     className={
-                  
+
                         location.pathname?.includes("/") &&
                         location.pathname != "/mylibrarycourses" &&
                         location.pathname != "/ratingsidebar" &&
-                     
+
                         role==="normaluser"
                           ? "sidebarlightmodelogo"
                            : location.pathname?.includes("/mylibrarycourses")
@@ -948,7 +948,7 @@ export default function Sidebar() {
                         && role==="normaluser"
                         ? "ratingSideBarLightLogo"
                         : location.pathname?.includes("/") &&
-                        
+
                         location.pathname != "/recentlyviewed" &&
                         location.pathname != "/mylibrarycourses" &&
                         location.pathname != "/ratingsidebar" &&
@@ -956,24 +956,24 @@ export default function Sidebar() {
                         location.pathname != "/feedback" &&
                         role==="editor"
                         ? "homePageEditorLogoLight"
-                    
+
                         : location.pathname?.includes("/recentlyviewed") && role==="editor"
                         ? "recentlyViewLightEditor"
-                     
+
                         : location.pathname?.includes("/mylibrarycourses") && role==="editor"
                         ? "libraryLightEditorLogo"
-                       
+
                         : location.pathname?.includes("/ratingsidebar") && role==="editor"
                         ? "ratingLogoEditorLight"
-                        
+
                         : location.pathname?.includes("/editormainpage") && role==="editor"
                         ? "editorMainPageLigght"
-                        
+
                         : location.pathname?.includes("/feedback") && role==="editor"
                         ? "feedBackLightEditor"
-                        
+
                         : location.pathname?.includes("/") &&
-                        
+
                         location.pathname != "/recentlyviewed" &&
                         location.pathname != "/mylibrarycourses" &&
                         location.pathname != "/ratingsidebar" &&
@@ -983,12 +983,12 @@ export default function Sidebar() {
                         location.pathname != "/register" &&
                         role===null
                         ?"homePageLightLogo"
-                        :location.pathname?.includes("/login") 
-                       
+                        :location.pathname?.includes("/login")
+
                         ? "loginPageLight"
-                    
-                        :location.pathname?.includes("/register") 
-                       
+
+                        :location.pathname?.includes("/register")
+
                         ? "registerPageLight"
                         : ""
 

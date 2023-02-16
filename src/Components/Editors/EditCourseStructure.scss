@@ -704,7 +704,7 @@
     height: 0;
     padding-left: 0.5rem;
     @include themed() {
-    color: t("codeTitle")
+      color: t("codeTitle");
     }
   }
   .text-editor {
@@ -820,7 +820,7 @@ li {
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 2rem;
-   height: calc(100vh - 180px);
+  height: calc(100vh - 180px);
   overflow-y: scroll;
   position: relative;
   top: -25px;
@@ -1264,7 +1264,7 @@ li {
 .scrollable {
   overflow-y: auto;
   // padding-bottom: 60px;
-   padding-right: 20px;
+  padding-right: 20px;
   padding-top: 0px;
   /* height: 630px; */
 }
@@ -1656,7 +1656,6 @@ li {
     height: 100%;
     overflow: visible;
   }
-
 
   .header_text {
     position: relative;
@@ -2692,7 +2691,6 @@ pre {
   .logo_main_container_landing
   button
   .homePageLightLogo {
-  width: 100px;
   height: 20px;
 }
 .lightTheme
@@ -2875,5 +2873,8 @@ pre {
     padding-left: 10px;
 
     margin-left: -5%;
+  }
+  .homePageLightLogo {
+    height: 20px;
   }
 }

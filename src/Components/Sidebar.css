@@ -914,6 +914,10 @@
     height: 20.47px;
   }
 
+  .logoContainerone > img {
+    height: 20px;
+  }
+
   .logo_main_container {
     padding-left: 65px;
   }
