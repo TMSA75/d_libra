@@ -14,6 +14,19 @@ $Recently_View_Shadow_Dark: 0px 4px 4px rgba(0, 0, 0, 0.25);
 $BG_Input_Form_Dark:#4F4F4F;
 $Success_Message_Light:green;
 $Success_Message_Dark:white;
+$Heading_Light: #3B68D7;
+$H2_Background: linear-gradient(87.62deg, #94c0ff -44.71%, #cbebff 100%);
+$Box_Blue: #0094FF;
+$transparent: transparent;
+$Box_Text_Light: #CBCBCB;
+$Box_Red: #FF0000;
+$Box_Gray: #6F6F6F;
+$Box_Title_Gray: #848484;
+$List_Text_Light:#C4C4C4;
+$Chapter_Number_Blue: #006ae1;
+$Topic_List_Item: #418DFE;
+$Code_Title_Light: #2D2D2D;
+
 
 
 
@@ -29,6 +42,22 @@ $themes: (
     recentlyViewShadow: $Recently_View_Shadow_Light,
     bgInputFrom:$BG_Body_Light,
     successMessage:$Success_Message_Light,
+    heading: $Heading_Light,
+    h2Background: $H2_Background,
+    boxBackground: $white-color,
+    boxText: $Box_Text_Light,
+    shadowBoxBg: $white-color,
+    shadowBoxText: $Box_Text_Light,
+    shadowBoxShadow: 0px 0px 10px rgba(0, 0, 0, 0.25),
+    shadowBoxTitleShadow: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25)),
+    blueBoxTitle: $Box_Blue,
+    redBoxTitle: $Box_Red,
+    greyBoxTitle: $Font_Body_Light,
+    listText: $Font_Body_Light,
+    greyOlText: $Box_Gray,
+    ulGrayDot: $Box_Gray,
+    topicListItem: $Topic_List_Item,
+    codeTitle: $Code_Title_Light,
 
 
   ),
@@ -42,6 +71,35 @@ $themes: (
     recentlyViewShadow: $Recently_View_Shadow_Dark,
     bgInputFrom:$BG_Input_Form_Dark,
     successMessage:$Success_Message_Dark,
+    heading: $white-color,
+    h2Background: $white-color,
+    boxBackground: $transparent,
+    boxText: $white-color,
+    shadowBoxBg: $Box_Text_Light,
+    shadowBoxText: $Font_Body_Light,
+    shadowBoxShadow: 0px 0px 10px #FFFFFF,
+    shadowBoxTitleShadow: drop-shadow(0px 0px 10px #FFFFFF),
+    blueBoxTitle: $white-color,
+    redBoxTitle: $white-color,
+    greyBoxTitle: $white-color,
+    listText: $white-color,
+    greyOlText: $white-color,
+    ulGrayDot: $Box_Text_Light,
+    topicListItem: $white-color,
+    codeTitle: $white-color,
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -69,4 +127,55 @@ $themes: (
 
 @function t($key) {
   @return map-get($theme-map, $key);
+}
+
+
+// media queries
+
+// extra small
+
+$screen-xs-min: 425px;
+
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 767px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+@mixin xs {
+  @media (max-width: #{$screen-xs-min}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (max-width: #{$screen-xl-min}) {
+    @content;
+  }
 }

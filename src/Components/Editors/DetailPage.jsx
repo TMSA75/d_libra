@@ -29,8 +29,7 @@ import {
   udateMetaTags,
 } from "../../Redux/Actions/Editor/post.action";
 import FooterButtons from "../User/FooterButtons";
-import "./EditCourseStructure.css";
-
+import "./EditCourseStructure.scss";
 import { pinState } from "../../Redux/Actions/auth.action";
 import { toast } from "react-toastify";
 
@@ -53,8 +52,6 @@ const DetailPage = () => {
   const [changeChapter, setChangeChapter] = useState();
   const [previousChapter, setPreviousChapter] = useState();
   const [chapterChange, setChapterChange] = useState(false);
-
-  // console.log("details", details);
 
   const handleBack = () => {
     navigate(state?.path !== undefined ? state?.path : "/", {
@@ -114,9 +111,6 @@ const DetailPage = () => {
     }
   });
 
-  // console.log(previousTopicFilterIndex)
-  console.log(previousTopic);
-
   useEffect(() => {
     const postById = async () => {
       let response = null;
@@ -136,6 +130,25 @@ const DetailPage = () => {
           )
         );
         setDetails(response);
+        (function () {
+          var pre = document.getElementsByClassName("text-editor"),
+            pl = pre.length;
+          let a = document.querySelectorAll(".line-number");
+          if (a?.length === 0) {
+            for (var i = 0; i < pl; i++) {
+              pre[i].innerHTML =
+                '<span class="line-number"></span>' +
+                pre[i].innerHTML +
+                '<span class="cl"></span>';
+              var num = pre[i].innerHTML.split(/\n/).length;
+              for (var j = 1; j < num; j++) {
+                var line_num = pre[i].getElementsByTagName("span")[0];
+                line_num.innerHTML += "<span>" + j + "</span>";
+              }
+            }
+          }
+        })();
+
       }
       if (
         response?.nextcategory &&
@@ -347,8 +360,32 @@ const DetailPage = () => {
     });
   };
 
+ const copyText=(className)=>{
+  var all_p = document.querySelectorAll(className);
+  all_p = Array.prototype.slice.call(all_p); // Convert the NodeList object to array (this method is not cross browser)
+  var listener = function (event, a) {
+    console.log("some click me12", event.target.innerText);
+    navigator.clipboard.writeText(event.target.innerText);
+    // event.target.style.setProperty('--content', "'Copied'");
+    // toast.info("copied");
+  };
+  var event_list = ["click"];
+  event_list.forEach(function (ev, ev_index) {
+    all_p.forEach(function (p, p_index) {
+      if (p_index === 0) {
+        p.addEventListener(ev, listener, false);
+      }
+    });
+  });
+ }
+
+ copyText(".n-usr-input");
+ copyText(".s-usr-input");
+ copyText(".cl-output");
+ copyText(".text-editor");
+
   return (
-    <>
+    <div className="detailpage">
       {/* {chapterChange &&
         toast.info("Chapter Changed", {
           position: "bottom-center",
@@ -1013,7 +1050,7 @@ const DetailPage = () => {
         )}
         <FooterButtons />
       </div>
-    </>
+    </div>
   );
 };
 

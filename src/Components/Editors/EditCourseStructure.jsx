@@ -1,7 +1,7 @@
 import { Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./EditCourseStructure.css";
+import "./EditCourseStructure.scss";
 import { Grid } from "@material-ui/core";
 import AddIcon from "@mui/icons-material/Add";
 import { HiArrowSmRight } from "react-icons/hi";

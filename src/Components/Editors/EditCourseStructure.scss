@@ -1,3 +1,766 @@
+@import "../../scss/theme";
+
+.detailpage {
+  height: calc(100vh - 120px);
+  h1 {
+    font-size: 2.375rem;
+    line-height: 4.6875rem;
+    color: $white-color;
+    background: linear-gradient(87.62deg, #004cb6 -44.71%, #009af9 100%);
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto;
+    font-weight: 900;
+    font-family: "Roboto";
+
+    @include md {
+      font-size: calc(2.375rem * 0.8);
+      line-height: calc(4.6875rem * 0.8);
+      margin: calc(1rem * 0.8) auto;
+    }
+
+    @include sm {
+      font-size: calc(2.375rem * 0.6);
+      line-height: calc(4.6875rem * 0.6);
+      margin: calc(1rem * 0.6) auto;
+    }
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 3.75rem;
+    font-weight: 900;
+    font-family: "Roboto";
+    position: relative;
+    width: 100%;
+    margin: 0.8rem auto;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      left: 0;
+      bottom: 8%;
+      background: linear-gradient(87.62deg, #94c0ff -44.71%, #cbebff 100%);
+      @include themed() {
+        background: t("h2Background");
+      }
+    }
+
+    @include themed() {
+      color: t("heading");
+    }
+
+    @include md {
+      font-size: calc(1.75rem * 0.8);
+      line-height: calc(3.75rem * 0.8);
+      margin: calc(0.8rem * 0.8) auto;
+    }
+
+    @include sm {
+      font-size: calc(1.75rem * 0.6);
+      line-height: calc(3.75rem * 0.6);
+      margin: calc(0.8rem * 0.6) auto;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 3.125rem;
+    font-weight: 700;
+    font-family: "Roboto";
+    width: 100%;
+    margin: 0.5rem auto;
+    padding: 0;
+
+    @include themed() {
+      color: t("heading");
+    }
+
+    @include md {
+      font-size: calc(1.5rem * 0.8);
+      line-height: calc(3.125rem * 0.8);
+      margin: calc(0.5rem * 0.8) auto;
+    }
+
+    @include sm {
+      font-size: calc(1.5rem * 0.6);
+      line-height: calc(3.125rem * 0.6);
+      margin: calc(0.5rem * 0.6) auto;
+    }
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    font-family: "Roboto";
+    width: 100%;
+    margin: 0.33rem auto;
+    padding: 0;
+
+    @include themed() {
+      color: t("heading");
+    }
+
+    @include md {
+      font-size: calc(1.25rem * 0.8);
+      line-height: calc(2.5rem * 0.8);
+      margin: calc(0.33rem * 0.8) auto;
+    }
+
+    @include sm {
+      font-size: calc(1.25rem * 0.6);
+      line-height: calc(2.5rem * 0.6);
+      margin: calc(0.33rem * 0.6) auto;
+    }
+  }
+
+  h5 {
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    font-weight: 700;
+    font-family: "Roboto";
+    width: 100%;
+    margin: 0.25rem auto;
+    padding: 0;
+
+    @include themed() {
+      color: t("heading");
+    }
+
+    @include md {
+      font-size: calc(1.125rem * 0.8);
+      line-height: calc(1.875rem * 0.8);
+      margin: calc(0.25rem * 0.8) auto;
+    }
+
+    @include sm {
+      font-size: calc(1.125rem * 0.6);
+      line-height: calc(1.875rem * 0.6);
+      margin: calc(0.25rem * 0.6) auto;
+    }
+  }
+
+  h6 {
+    font-size: 1rem;
+    line-height: 1.875rem;
+    font-weight: 700;
+    font-family: "Roboto";
+    width: 100%;
+    margin: 0.15rem auto;
+    padding: 0;
+
+    @include themed() {
+      color: t("heading");
+    }
+
+    @include md {
+      font-size: calc(1rem * 0.8);
+      line-height: calc(1.875rem * 0.8);
+      margin: calc(0.15rem * 0.8) auto;
+    }
+
+    @include sm {
+      font-size: calc(1rem * 0.6);
+      line-height: calc(1.875rem * 0.6);
+      margin: calc(0.15rem * 0.6) auto;
+    }
+  }
+
+  div {
+    .detailpage_div {
+      width: 100%;
+      padding: 0.75rem 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.55rem;
+      font-weight: 400;
+      // font-family: "Roboto";
+    }
+
+    .box-blue {
+      @extend .detailpage_div;
+      border: 2px solid $Box_Blue;
+      @include themed() {
+        background-color: t("boxBackground");
+        color: t("boxText");
+      }
+    }
+
+    .box-red {
+      @extend .detailpage_div;
+      border: 2px solid $Box_Red;
+      @include themed() {
+        background-color: t("boxBackground");
+        color: t("boxText");
+      }
+    }
+
+    .box-gray {
+      @extend .detailpage_div;
+      border: 2px solid $Box_Gray;
+      @include themed() {
+        background-color: t("boxBackground");
+        color: t("boxText");
+      }
+    }
+
+    .box-drop-shadow {
+      @extend .detailpage_div;
+      border: 2px solid $white-color;
+      @include themed() {
+        background-color: t("shadowBoxBg");
+        color: t("shadowBoxText");
+        box-shadow: t("shadowBoxShadow");
+      }
+    }
+
+    .box-title-tab-blue {
+      @extend .detailpage_div;
+      background-color: $Box_Blue;
+      color: $white-color;
+      width: fit-content;
+      line-height: 1;
+      padding: 5px 10px;
+      border-radius: 5px 5px 0px 0px;
+      font-weight: 700;
+    }
+    .box-title-tab-red {
+      @extend .box-title-tab-blue;
+      background-color: $Box_Red;
+    }
+    .box-title-tab-gray {
+      @extend .box-title-tab-blue;
+      background-color: $Box_Title_Gray;
+    }
+    .box-title-tab-gray-drop-shadow {
+      @extend .box-title-tab-blue;
+      background-color: $Box_Title_Gray;
+
+      @include themed() {
+        box-shadow: t("shadowBoxShadow");
+      }
+    }
+
+    .box-title-blue {
+      @extend .detailpage_div;
+      width: fit-content;
+      line-height: 1;
+      padding: 5px 10px;
+      font-weight: 700;
+
+      @include themed() {
+        color: t("blueBoxTitle");
+      }
+    }
+
+    .box-title-red {
+      @extend .box-title-blue;
+
+      @include themed() {
+        color: t("redBoxTitle");
+      }
+    }
+
+    .box-title-gray {
+      @extend .box-title-blue;
+
+      @include themed() {
+        color: t("greyBoxTitle");
+      }
+    }
+
+    .box-title-gray-drop-shadow {
+      @extend .box-title-blue;
+
+      @include themed() {
+        color: t("greyBoxTitle");
+        filter: t("shadowBoxTitleShadow");
+      }
+    }
+
+    .ol-blue {
+      list-style: none;
+      counter-reset: item;
+      padding: 0;
+
+      @include themed() {
+        color: t("listText");
+      }
+
+      li {
+        counter-increment: item;
+        position: relative;
+        font-size: 1.25rem;
+        font-family: "Roboto";
+
+        &:not(:last-child) {
+          margin-bottom: 0.66rem;
+        }
+      }
+      li:before {
+        content: counter(item);
+        width: fit-content;
+        text-align: center;
+        display: inline-block;
+        margin-right: 0.65rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+        font-family: "Roboto";
+
+        @include themed() {
+          color: t("blueBoxTitle");
+        }
+      }
+      li:after {
+        content: ".";
+        left: 2px;
+        color: $Box_Blue;
+        width: 1.2em;
+        text-align: center;
+        display: inline-block;
+        position: absolute;
+        left: 2px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        font-family: "Roboto";
+
+        @include themed() {
+          color: t("blueBoxTitle");
+        }
+      }
+    }
+
+    .ol-red {
+      @extend .ol-blue;
+      li:before {
+        @include themed() {
+          color: t("redBoxTitle");
+        }
+      }
+      li:after {
+        @include themed() {
+          color: t("redBoxTitle");
+        }
+      }
+    }
+
+    .ol-gray {
+      @extend .ol-blue;
+      li:before {
+        @include themed() {
+          color: t("greyOlText");
+        }
+      }
+      li:after {
+        @include themed() {
+          color: t("greyOlText");
+        }
+      }
+    }
+
+    .ol-circle-blue {
+      list-style: none;
+      counter-reset: item;
+      padding: 0;
+
+      @include themed() {
+        color: t("listText");
+      }
+
+      li {
+        counter-increment: item;
+        position: relative;
+        font-size: 1.25rem;
+        font-family: "Roboto";
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-bottom: 0.66rem;
+        }
+      }
+      li:before {
+        content: counter(item);
+        width: fit-content;
+        text-align: center;
+        display: inline-block;
+        font-size: 0.8rem;
+        font-family: "Roboto";
+        font-weight: 700;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.6rem;
+        background-color: $Box_Blue;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        color: $white-color;
+      }
+    }
+
+    .ol-circle-red {
+      @extend .ol-circle-blue;
+
+      li:before {
+        background-color: $Box_Red;
+        color: $white-color;
+      }
+    }
+
+    .ol-circle-gray {
+      @extend .ol-circle-blue;
+
+      li:before {
+        background-color: $Box_Gray;
+        color: $white-color;
+      }
+    }
+
+    .ol-square-blue {
+      list-style: none;
+      counter-reset: item;
+      padding: 0;
+
+      @include themed() {
+        color: t("listText");
+      }
+
+      li {
+        counter-increment: item;
+        position: relative;
+        font-size: 1.25rem;
+        font-family: "Roboto";
+
+        &:not(:last-child) {
+          margin-bottom: 0.66rem;
+        }
+      }
+      li:before {
+        content: counter(item);
+        width: fit-content;
+        text-align: center;
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        font-family: "Roboto";
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.45rem;
+        background-color: $Box_Blue;
+        height: 1.2rem;
+        width: 1.2rem;
+        border-radius: 2px;
+        color: $white-color;
+      }
+    }
+
+    .ol-square-red {
+      @extend .ol-square-blue;
+
+      li:before {
+        background-color: $Box_Red;
+        color: $white-color;
+      }
+    }
+
+    .ol-square-gray {
+      @extend .ol-square-blue;
+
+      li:before {
+        background-color: $Box_Gray;
+        color: $white-color;
+      }
+    }
+
+    .ul-circle-blue {
+      list-style: none;
+      counter-reset: item;
+      padding: 0;
+
+      @include themed() {
+        color: t("listText");
+      }
+
+      li {
+        counter-increment: item;
+        position: relative;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-bottom: 0.66rem;
+        }
+      }
+      li:before {
+        content: "";
+        width: fit-content;
+        text-align: center;
+        display: inline-block;
+        font-size: 0.8rem;
+        margin-right: 1rem;
+        background-color: $Box_Blue;
+        height: 0.625rem;
+        width: 0.625rem;
+        border-radius: 50%;
+      }
+    }
+
+    .ul-circle-red {
+      @extend .ul-circle-blue;
+      li:before {
+        background-color: $Box_Red;
+      }
+    }
+
+    .ul-circle-gray {
+      @extend .ul-circle-blue;
+      li:before {
+        @include themed() {
+          background-color: t("ulGrayDot");
+        }
+      }
+    }
+
+    .ul-checkbox-blue {
+      list-style: none;
+      counter-reset: item;
+      padding: 0;
+
+      @include themed() {
+        color: t("listText");
+      }
+
+      li {
+        counter-increment: item;
+        position: relative;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-bottom: 0.66rem;
+        }
+      }
+      li:before {
+        content: "";
+        width: fit-content;
+        text-align: center;
+        display: inline-block;
+        margin-right: 1rem;
+        background-color: transparent;
+        height: 0.625rem;
+        width: 0.625rem;
+        border: 1px solid $Box_Blue;
+      }
+    }
+
+    .ul-checkbox-red {
+      @extend .ul-checkbox-blue;
+      li:before {
+        border: 1px solid $Box_Red;
+      }
+    }
+
+    .ul-checkbox-gray {
+      @extend .ul-checkbox-blue;
+      li:before {
+        @include themed() {
+          border: 1px solid t("ulGrayDot");
+        }
+      }
+    }
+
+    .toc-chapter-box {
+      width: 100%;
+      padding: 0.56rem 0.65rem;
+      background: linear-gradient(87.62deg, #004cb6 -44.71%, #009af9 100%);
+      border-radius: 0.3rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .toc-chapter-number {
+      position: relative;
+      background-color: $white-color;
+      border-radius: 50%;
+      margin: 0 0.65rem;
+      margin-left: 0;
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-family: "Roboto";
+      color: $Chapter_Number_Blue;
+      width: 2rem;
+      height: 2rem;
+      min-width: min-content;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      &::before {
+        content: "";
+        background-color: $white-color;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+    }
+
+    .toc-chapter-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-family: "Roboto";
+      color: $white-color;
+    }
+
+    .toc-topic-list {
+      font-size: 1.25rem;
+      line-height: 2.5rem;
+      font-weight: 700;
+      font-family: "Roboto";
+      padding-left: 2.75rem;
+      position: relative;
+
+      @include themed() {
+        color: t("topicListItem");
+        border-bottom: 1px solid t("topicListItem");
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0.9rem;
+        transform: translate(-20%, -50%);
+        height: 0.95rem;
+        width: 0.95rem;
+        border-radius: 50%;
+
+        @include themed() {
+          background-color: t("topicListItem");
+        }
+      }
+    }
+
+    .cl-output {
+      display: flex;
+      padding: 0.875rem;
+      border: 1px solid $white-color;
+      border-radius: 0.3rem;
+      background-color: $BG_Input_Form_Dark;
+      font-family: "Helvetica";
+      font-weight: 300;
+      color: $white-color;
+      font-size: 1.25rem;
+      position: relative;
+      margin-top: 1.75rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -0.5px;
+        right: 1rem;
+        height: 1.675rem;
+        width: 3.75rem;
+        transform: translateY(-100%);
+        background: url("../../assests/copyBtn.svg");
+        cursor: pointer;
+        background-size: contain;
+      }
+    }
+
+    .n-usr-input {
+      @extend .cl-output;
+      padding-left: 1.75rem;
+
+      &::before {
+        content: "$";
+        position: absolute;
+        top: 50%;
+        left: 0.875rem;
+        transform: translate(-25%, -50%);
+      }
+    }
+    .s-usr-input {
+      @extend .n-usr-input;
+      &::before {
+        content: "#";
+      }
+    }
+  }
+  .code-title {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    margin: 0;
+    transform: translateY(100%);
+    font-family: "Helvetica";
+    height: 0;
+    padding-left: 0.5rem;
+    @include themed() {
+    color: t("codeTitle")
+    }
+  }
+  .text-editor {
+    background-color: #eee;
+    overflow: auto;
+    margin: 0 0 1em;
+    padding: 1.3rem 0.65rem;
+    padding-bottom: 0;
+    background: linear-gradient(240.85deg, #22007e 0%, #0f0725 100%);
+    border: 1px solid $white-color;
+    border-radius: 0.3rem;
+    position: relative;
+    margin-top: 1.75rem;
+    overflow: visible;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -0.5px;
+      right: 1rem;
+      height: 1.675rem;
+      width: 3.75rem;
+      transform: translateY(-100%);
+      background: url("../../assests/textEditorCopy.svg");
+      cursor: pointer;
+      background-size: contain;
+    }
+  }
+  .text-editor code,
+  .text-editor .line-number {
+    /* Ukuran line-height antara teks di dalam tag <code> dan <span class="line-number"> harus sama! */
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 400;
+    font-family: "Monaco";
+    line-height: 1.5rem;
+  }
+
+  .text-editor .line-number {
+    float: left;
+    margin: 0 1em 0 -1em;
+    border-right: 1px solid;
+    text-align: right;
+  }
+
+  .text-editor .line-number span {
+    display: block;
+    padding: 0 0.5em 0 1em;
+  }
+
+  .text-editor .cl {
+    display: block;
+    clear: both;
+  }
+}
+
 .bookmark_normaluser_null_tablet {
   display: none;
 }
@@ -23,7 +786,7 @@
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 2rem;
-  height: 71vh;
+  height: calc(100vh - 180px);
   overflow-y: scroll;
   position: relative;
   top: -25px;
@@ -57,7 +820,7 @@ li {
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 2rem;
-  height: 70vh;
+   height: calc(100vh - 180px);
   overflow-y: scroll;
   position: relative;
   top: -25px;
@@ -333,7 +1096,7 @@ li {
   justify-content: center;
   font-style: normal;
   font-weight: 700;
-  font-size: 21px;
+  font-size: 1.35rem;
   margin-top: -2px;
   line-height: 18px;
   display: flex;
@@ -341,6 +1104,13 @@ li {
   text-align: center;
   letter-spacing: -0.015em;
   color: #ffffff;
+  @include md {
+    font-size: calc(1.35rem * 0.8);
+  }
+
+  @include sm {
+    font-size: calc(1.75rem * 0.6);
+  }
 }
 
 .header_text_NormalUser {
@@ -361,6 +1131,13 @@ li {
   position: relative;
   top: 55%;
   transform: translateY(-50%);
+  @include md {
+    font-size: calc(1rem * 0.9);
+  }
+
+  @include sm {
+    font-size: calc(1rem * 0.8);
+  }
 }
 
 .header_texttwo {
@@ -474,6 +1251,8 @@ li {
 
 .detail_page_content {
   padding: 5px 0px 30px 12px;
+  padding-bottom: 0 !important;
+  padding-top: 0;
   font-style: normal;
   font-weight: 400;
   font-size: 21px;
@@ -484,8 +1263,8 @@ li {
 
 .scrollable {
   overflow-y: auto;
-  padding-bottom: 60px;
-  /* padding-right: 20px; */
+  // padding-bottom: 60px;
+   padding-right: 20px;
   padding-top: 0px;
   /* height: 630px; */
 }
@@ -874,8 +1653,11 @@ li {
     gap: 1rem !important;
   }
   .scrollable {
+    height: 100%;
     overflow: visible;
   }
+
+
   .header_text {
     position: relative;
     top: 55%;
@@ -894,7 +1676,7 @@ li {
     font-size: 1.2rem;
     font-weight: 300;
     line-height: 2rem;
-    height: 80vh;
+    height: 100%;
     overflow-y: scroll;
     position: relative;
     top: -25px;
@@ -907,11 +1689,14 @@ li {
     font-size: 1.2rem;
     font-weight: 300;
     line-height: 2rem;
-    height: 80vh;
+    height: 100%;
     overflow-y: scroll;
     position: relative;
     top: -25px;
     padding: 6px;
+  }
+  .displayFlexForTags {
+    margin-bottom: 1rem;
   }
 }
 
@@ -1742,12 +2527,12 @@ pre {
 .chapter_topic_list p {
   display: none;
 }
-.contentOne h3 {
-  margin-top: 30px;
-}
-.contentTwo h3 {
-  margin-top: 30px;
-}
+// .contentOne h3 {
+//   margin-top: 30px;
+// }
+// .contentTwo h3 {
+//   margin-top: 30px;
+// }
 
 .contentOne .blue_square .code_type .code_type_title {
   display: flex;
@@ -1784,193 +2569,311 @@ pre {
 
 .contentTwo .blue_square .code_type .code_type_title {
   color: #fff;
-
 }
 
- .darkTheme div div div div div .detail_page_content span div p span{
+.darkTheme div div div div div .detail_page_content span div p span {
   color: #fff !important;
-
 }
 
-.contentTwo p strong a{
-  color:yellow;
-
+.contentTwo p strong a {
+  color: yellow;
 }
-.contentTwo .blue_square .chapter_topic_list ul li a strong{
-  color:yellow;
-
+.contentTwo .blue_square .chapter_topic_list ul li a strong {
+  color: yellow;
 }
 
-  .contentTwo .key_point_list .key_point_list_title_normal{
-    color:#FFF;
-
-}
-
-.contentTwo .subtitle{
-  color:#fff;
-
-}
-.contentTwo .blue_square div p{
+.contentTwo .key_point_list .key_point_list_title_normal {
   color: #fff;
-
 }
-.contentTwo .blue_square div ul li{
+
+.contentTwo .subtitle {
   color: #fff;
-
 }
-.contentTwo .blue_square{
+.contentTwo .blue_square div p {
+  color: #fff;
+}
+.contentTwo .blue_square div ul li {
+  color: #fff;
+}
+.contentTwo .blue_square {
   color: #fff !important;
-
 }
 
-
-.lightTheme header div.logocontainer .logo_main_container button .myLibraryLogo{
+.lightTheme
+  header
+  div.logocontainer
+  .logo_main_container
+  button
+  .myLibraryLogo {
   width: 100px;
   height: 20px;
   margin-left: 15px;
 }
-.lightTheme header div.logocontainer .logo_main_container button .ratingSideBarLightLogo{
+.lightTheme
+  header
+  div.logocontainer
+  .logo_main_container
+  button
+  .ratingSideBarLightLogo {
   width: 100px;
   height: 20px;
   margin-left: 15px;
 }
-.lightTheme header div .logocontainer .logo_main_container_landing_role_editor button .homePageEditorLogoLight{
+.lightTheme
+  header
+  div
+  .logocontainer
+  .logo_main_container_landing_role_editor
+  button
+  .homePageEditorLogoLight {
   width: 100px;
   height: 20px;
   margin-left: 15px;
 }
-.lightTheme header div .logocontainer .logo_main_container_some_pages button .recentlyViewLightEditor{
+.lightTheme
+  header
+  div
+  .logocontainer
+  .logo_main_container_some_pages
+  button
+  .recentlyViewLightEditor {
   width: 100px;
   height: 20px;
   margin-left: 15px;
 }
-.lightTheme header div .logocontainer .editor_myLibrary button .libraryLightEditorLogo{
+.lightTheme
+  header
+  div
+  .logocontainer
+  .editor_myLibrary
+  button
+  .libraryLightEditorLogo {
   width: 100px;
   height: 20px;
   margin-left: 430px;
 }
-.lightTheme header div .logocontainer .logo_main_container_some_pages button .ratingLogoEditorLight{
+.lightTheme
+  header
+  div
+  .logocontainer
+  .logo_main_container_some_pages
+  button
+  .ratingLogoEditorLight {
   width: 100px;
   height: 20px;
   margin-left: 15px;
 }
-.lightTheme header div .logocontainer .logo_main_container_some_pages button .editorMainPageLigght{
+.lightTheme
+  header
+  div
+  .logocontainer
+  .logo_main_container_some_pages
+  button
+  .editorMainPageLigght {
   width: 100px;
   height: 20px;
   margin-left: -37px;
 }
-.lightTheme header div .logocontainer .logo_main_container_some_pages button .feedBackLightEditor{
+.lightTheme
+  header
+  div
+  .logocontainer
+  .logo_main_container_some_pages
+  button
+  .feedBackLightEditor {
   width: 100px;
   height: 20px;
   margin-left: -37px;
 }
-.lightTheme header div .logocontainer .logo_main_container_landing button .homePageLightLogo{
+.lightTheme
+  header
+  div
+  .logocontainer
+  .logo_main_container_landing
+  button
+  .homePageLightLogo {
   width: 100px;
   height: 20px;
-
 }
-.lightTheme header div .logocontainer .logo_main_container_null button .loginPageLight{
+.lightTheme
+  header
+  div
+  .logocontainer
+  .logo_main_container_null
+  button
+  .loginPageLight {
   width: 100px;
   height: 20px;
-
 }
-.lightTheme header div .logocontainer .logo_main_container_null button .registerPageLight{
+.lightTheme
+  header
+  div
+  .logocontainer
+  .logo_main_container_null
+  button
+  .registerPageLight {
   width: 100px;
   height: 20px;
-
 }
 
-@media (max-width:991px) {
-
-  .lightTheme header div .logocontainer .editor_myLibrary button .libraryLightEditorLogo{
+@media (max-width: 991px) {
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .editor_myLibrary
+    button
+    .libraryLightEditorLogo {
     width: 100px;
     height: 20px;
 
     margin-left: 330%;
   }
-
-  
 }
 
-@media (max-width:755px) {
-
-  .detailPageWithoutLogin{
+@media (max-width: 755px) {
+  .detailPageWithoutLogin {
     /* margin-left: 65px; */
-
   }
-  .uploadContentPageCl{
+  .uploadContentPageCl {
     margin-right: 20px !important;
   }
-  .addCatagoryEditor{
+  .addCatagoryEditor {
     margin-left: 30px;
   }
-  .lightTheme header div.logocontainer .logo_main_container button .sidebarlightmodelogo{
+  .lightTheme
+    header
+    div.logocontainer
+    .logo_main_container
+    button
+    .sidebarlightmodelogo {
     padding-left: 15px;
     margin-right: 26px;
-
-
   }
-  .lightTheme header div.logocontainer .logo_main_container button .myLibraryLogo{
-   
+  .lightTheme
+    header
+    div.logocontainer
+    .logo_main_container
+    button
+    .myLibraryLogo {
     padding-left: 20px;
     margin-left: 10px;
   }
-  
-  .lightTheme header div.logocontainer .logo_main_container button .ratingSideBarLightLogo{
-   
+
+  .lightTheme
+    header
+    div.logocontainer
+    .logo_main_container
+    button
+    .ratingSideBarLightLogo {
     padding-left: 20px;
     margin-left: -20px;
   }
-  
-  .lightTheme header div .logocontainer .logo_main_container_landing_role_editor button .homePageEditorLogoLight{
+
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .logo_main_container_landing_role_editor
+    button
+    .homePageEditorLogoLight {
     padding-left: 10px;
     margin-left: -20px;
   }
-  .lightTheme header div .logocontainer .logo_main_container_some_pages button .recentlyViewLightEditor{
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .logo_main_container_some_pages
+    button
+    .recentlyViewLightEditor {
     padding-left: 10px;
     margin-left: -20px;
   }
 
-  .lightTheme header div .logocontainer .editor_myLibrary button .libraryLightEditorLogo{
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .editor_myLibrary
+    button
+    .libraryLightEditorLogo {
     width: 100px;
     height: 20px;
 
-    margin-left:118%;
+    margin-left: 118%;
   }
-  .lightTheme header div .logocontainer .logo_main_container_some_pages button .ratingLogoEditorLight{
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .logo_main_container_some_pages
+    button
+    .ratingLogoEditorLight {
     padding-left: 10px;
     margin-left: -20px;
   }
-  .lightTheme header div .logocontainer .logo_main_container_some_pages button .editorMainPageLigght{
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .logo_main_container_some_pages
+    button
+    .editorMainPageLigght {
     padding-left: 10px;
     margin-left: -35px;
   }
-  .lightTheme header div .logocontainer .logo_main_container_some_pages button .feedBackLightEditor{
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .logo_main_container_some_pages
+    button
+    .feedBackLightEditor {
     padding-left: 10px;
     margin-left: -20px;
   }
-  .lightTheme header div .logocontainer .logo_main_container_landing button .homePageLightLogo{
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .logo_main_container_landing
+    button
+    .homePageLightLogo {
     padding-left: 10px;
     margin-left: -20px;
-  
   }
-  .lightTheme header div .logocontainer .logo_main_container_null button .loginPageLight{
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .logo_main_container_null
+    button
+    .loginPageLight {
     padding-left: 10px;
     margin-left: -10px;
-  
   }
-  .lightTheme header div .logocontainer .logo_main_container_null button .registerPageLight{
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .logo_main_container_null
+    button
+    .registerPageLight {
     padding-left: 10px;
     margin-left: -10px;
-  
   }
 }
-@media (max-width:600px) {
-  .lightTheme header div .logocontainer .editor_myLibrary button .libraryLightEditorLogo{
+@media (max-width: 600px) {
+  .lightTheme
+    header
+    div
+    .logocontainer
+    .editor_myLibrary
+    button
+    .libraryLightEditorLogo {
     padding-left: 10px;
 
-
-    margin-left:-5%;
+    margin-left: -5%;
   }
-  
 }

@@ -22,7 +22,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Box } from "@material-ui/core";
 import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
-import "../EditCourseStructure.css";
+import "../EditCourseStructure.scss";
 import { GoPrimitiveDot } from "react-icons/go";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
