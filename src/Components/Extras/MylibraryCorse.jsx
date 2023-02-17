@@ -44,8 +44,6 @@ const MylibraryCorse = () => {
   const [priority, setPriority] = useState("");
   const [showAllBookmark, setShowAllBookmark] = useState([]);
 
-  console.log("data", data);
-
   const handleBack = () => {
     navigate("/");
   };
@@ -55,6 +53,7 @@ const MylibraryCorse = () => {
     console.log("response", response);
     setdata(response);
   };
+
   // const priority = () => {
   //   const response = dispatch(setBookMarkPriority(token));
   //   console.log(response);
@@ -68,11 +67,32 @@ const MylibraryCorse = () => {
   useEffect(() => {
     libraryByCourse();
     handleShowAllBookmark();
-  }, [bookmark]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const handleBookMark = async (Contentid) => {
+  const updateBookmarkLocally = (courseIndex, chapterIndex) => {
+    const tempData = [...data];
+    let PriorityType = "";
+    for (let i = 0; i < showAllBookmark?.length; i++) {
+      if (
+        tempData?.[courseIndex]?.Chapter?.[chapterIndex]?.Prioritytype ===
+        showAllBookmark?.[i]?.name
+      ) {
+        if (i === showAllBookmark?.length - 1) {
+          PriorityType = null;
+        } else {
+          PriorityType = showAllBookmark?.[i + 1]?.name;
+        }
+        break;
+      }
+    }
+    tempData[courseIndex].Chapter[chapterIndex].Prioritytype = PriorityType;
+    setdata(tempData);
+  };
+
+  const handleBookMark = async (Contentid, courseIndex, chapterIndex) => {
+    updateBookmarkLocally(courseIndex, chapterIndex);
     const response = await dispatch(addContentBookmark(Contentid, role, token));
-    // console.log("response", response);
     setBookmark(response);
     !token &&
       Swal.fire({
@@ -117,10 +137,7 @@ const MylibraryCorse = () => {
           theme ? "library_root_container_simple" : "library_root_container"
         }
       >
-        <button
-          onClick={handleBack}
-          className="back_button librarybackbutton"
-        >
+        <button onClick={handleBack} className="back_button librarybackbutton">
           <ArrowBack className="backbutton_icon" />{" "}
           <span className="backbutton_text">Back</span>
         </button>
@@ -170,7 +187,7 @@ const MylibraryCorse = () => {
       <div className="landingpage_slider_container libraryrootcontainer">
         {data?.length > 0 ? (
           <>
-            {data?.map((item) => {
+            {data?.map((item, courseIndex) => {
               // console.log("item", item);
               return (
                 <>
@@ -190,7 +207,7 @@ const MylibraryCorse = () => {
                       </div>
                       <div>
                         <ReuseableCarousel>
-                          {item?.Chapter?.map((e) => {
+                          {item?.Chapter?.map((e, chapterIndex) => {
                             return (
                               <div
                                 style={
@@ -231,7 +248,6 @@ const MylibraryCorse = () => {
                                       noWrap
                                       component="div"
                                       className="underimagecontent"
-                                    
                                     >
                                       <Typography
                                         noWrap
@@ -241,52 +257,62 @@ const MylibraryCorse = () => {
                                         {e.contentname}
                                       </Typography>
                                     </Typography>
-                                    <div className="mycontenttagscontainer">
-                                      {token ? (
-                                        <img
-                                          src={
-                                            e.bookmark === null
-                                              ? Bookmark_grey
-                                              : e?.Prioritytype ===
-                                                showAllBookmark[0]?.name
-                                              ? Bookmark_blue
-                                              : e?.Prioritytype ===
-                                                showAllBookmark[1]?.name
-                                              ? Bookmark_green
-                                              : e?.Prioritytype ===
-                                                showAllBookmark[2]?.name
-                                              ? Bookmark_red
-                                              : e?.Prioritytype ===
-                                                showAllBookmark[3]?.name
-                                              ? Bookmark_yellow
-                                              : e?.Prioritytype ===
-                                                showAllBookmark[4]?.name
-                                              ? Green_Bookmark
-                                              : e.bookmark === "null"
-                                              ? Bookmark_grey
-                                              : Bookmark_grey
-                                          }
-                                          alt=""
-                                          className="tagstwocontainer"
-                                          onClick={() =>
-                                            handleBookMark(e?.contentid)
-                                          }
-                                          style={{ cursor: "pointer" }}
-                                        />
-                                      ) : (
-                                        <img
-                                          src={Bookmark_grey}
-                                          alt=""
-                                          className="tagstwocontainer"
-                                          style={{
-                                            cursor: "pointer",
-                                          }}
-                                          onClick={() =>
-                                            handleBookMark(e?.contentid)
-                                          }
-                                        />
-                                      )}
-                                    </div>
+                                    {e?.Prioritytype !== null && (
+                                      <div className="mycontenttagscontainer">
+                                        {token ? (
+                                          <img
+                                            src={
+                                              e.bookmark === null
+                                                ? Bookmark_grey
+                                                : e?.Prioritytype ===
+                                                  showAllBookmark[0]?.name
+                                                ? Bookmark_blue
+                                                : e?.Prioritytype ===
+                                                  showAllBookmark[1]?.name
+                                                ? Bookmark_green
+                                                : e?.Prioritytype ===
+                                                  showAllBookmark[2]?.name
+                                                ? Bookmark_red
+                                                : e?.Prioritytype ===
+                                                  showAllBookmark[3]?.name
+                                                ? Bookmark_yellow
+                                                : e?.Prioritytype ===
+                                                  showAllBookmark[4]?.name
+                                                ? Green_Bookmark
+                                                : e.bookmark === "null"
+                                                ? Bookmark_grey
+                                                : Bookmark_grey
+                                            }
+                                            alt=""
+                                            className="tagstwocontainer"
+                                            onClick={() =>
+                                              handleBookMark(
+                                                e?.contentid,
+                                                courseIndex,
+                                                chapterIndex
+                                              )
+                                            }
+                                            style={{ cursor: "pointer" }}
+                                          />
+                                        ) : (
+                                          <img
+                                            src={Bookmark_grey}
+                                            alt=""
+                                            className="tagstwocontainer"
+                                            style={{
+                                              cursor: "pointer",
+                                            }}
+                                            onClick={() =>
+                                              handleBookMark(
+                                                e?.contentid,
+                                                courseIndex,
+                                                chapterIndex
+                                              )
+                                            }
+                                          />
+                                        )}
+                                      </div>
+                                    )}
                                   </div>
                                 ) : (
                                   ""
