@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.528f5b04.css",
-    "main.js": "/static/js/main.5b6ecd63.js",
+    "main.js": "/static/js/main.c6baf0f8.js",
     "static/js/787.583a4c71.chunk.js": "/static/js/787.583a4c71.chunk.js",
     "static/media/CollaboratingOnGitGitHubRemoteRepository.svg": "/static/media/CollaboratingOnGitGitHubRemoteRepository.949769d9af8ec2b2773a14538d43bd96.svg",
     "static/media/WhatIsGit_.svg": "/static/media/WhatIsGit_.1f343beb30531e25e932047a470586c5.svg",
@@ -86,11 +86,11 @@
     "static/media/Sidebar_NightMode.svg": "/static/media/Sidebar_NightMode.0266ac50fc80cd139b07cc5f7e579d4c.svg",
     "static/media/Hamburger_Menu_dark.svg": "/static/media/Hamburger_Menu_dark.c00fecedc5518365c026d80fa6a632f5.svg",
     "main.528f5b04.css.map": "/static/css/main.528f5b04.css.map",
-    "main.5b6ecd63.js.map": "/static/js/main.5b6ecd63.js.map",
+    "main.c6baf0f8.js.map": "/static/js/main.c6baf0f8.js.map",
     "787.583a4c71.chunk.js.map": "/static/js/787.583a4c71.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.528f5b04.css",
-    "static/js/main.5b6ecd63.js"
+    "static/js/main.c6baf0f8.js"
   ]
 }
