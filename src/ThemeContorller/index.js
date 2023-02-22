@@ -8,10 +8,10 @@ const ThemeContorller = ({ children }) => {
   const theme = useSelector((state) => state.theme.state);
 
 
-  // useEffect(() => {
-    // localStorage.setItem("globalTheme", theme);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [theme]);
+  useEffect(() => {
+    localStorage.setItem("globalTheme", theme);
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [theme]);
 
 
   return (

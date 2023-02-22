@@ -280,21 +280,22 @@ const UserSettingViewPage = () => {
   return (
     <div>
       {message === "All bookmarks already exist"
-        ? toast.info("Bookmark already exists", {
+        && toast.info("Bookmark already exists", {
             position: "top-center",
             toastId: "",
           })
-        : message === "Add successfully"
-        ? toast.success("Bookmark added successfully", {
-            position: "top-center",
-            toastId: "",
-          })
-        : message === "Delete successfully"
-        ? toast.success("Bookmark deleted successfully", {
-            position: "top-center",
-            toastId: "",
-          })
-        : null}
+        // : message === "Add successfully"
+        // ? toast.success("Bookmark added successfully", {
+        //     position: "top-center",
+        //     toastId: "",
+        //   })
+        // : message === "Delete successfully"
+        // ? toast.success("Bookmark deleted successfully", {
+        //     position: "top-center",
+        //     toastId: "",
+        //   })
+        // : null
+        }
       <button
         onClick={handleBack}
         className="back_button"

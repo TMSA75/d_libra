@@ -282,6 +282,7 @@
   margin-bottom: 20px;
   margin-top: 20px;
   padding: 0px 10px 0px 10px;
+  padding-bottom: 20px;
 }
 .recentlyviewedcontainer {
   margin-bottom: 80px;
@@ -366,12 +367,8 @@
   height: 24.23px !important;
 }
 .subcoursename {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.875rem;
-  line-height: 1rem;
-  letter-spacing: -0.015em;
-
+  font-family: 'Helvetica' !important;
+  font-weight: 700 !important;
   @include themed() {
     color: t("courseName");
   }

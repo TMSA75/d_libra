@@ -182,6 +182,17 @@ export default function Sidebar() {
     setaccordionicon(!accordionicon);
   };
 
+  const temp =
+    localStorage.getItem("globalTheme") === "true" ||
+    localStorage.getItem("globalTheme") === "false"
+      ? JSON.parse(localStorage.getItem("globalTheme"))
+      : false;
+  React.useEffect(() => {
+    setThemeState(temp);
+    dispatch(themeSwitch(temp));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [temp]);
+
   const handleChange = async (event) => {
     setThemeState(event.target.checked);
     dispatch(themeSwitch(!themeState));
@@ -625,11 +636,11 @@ export default function Sidebar() {
             <div class="container switch_class">
               <label
                 class="switch"
-                style={{ background: themestate ? "#009AF9 " : " #BDB9A6" }}
+                style={{ background: !themestate ? "#009AF9 " : " #BDB9A6" }}
               >
                 <input
                   type="checkbox"
-                  checked={themestate}
+                  checked={!themestate}
                   onChange={handleChange}
                   inputProps={{ "aria-label": "test switch" }}
                 />{" "}
@@ -878,7 +889,8 @@ export default function Sidebar() {
                   ? "logo_main_container"
                   : role === "editor" &&
                     location.pathname !== "/" &&
-                    themeState === false && location.pathname !== "/addnewcategory"
+                    themeState === false &&
+                    location.pathname !== "/addnewcategory"
                   ? "logo_main_container"
                   : role === "editor" &&
                     location.pathname !== "/" &&
@@ -934,65 +946,55 @@ export default function Sidebar() {
                     src={lightmode_logo}
                     alt=""
                     className={
-
-                        location.pathname?.includes("/") &&
-                        location.pathname != "/mylibrarycourses" &&
-                        location.pathname != "/ratingsidebar" &&
-
-                        role==="normaluser"
-                          ? "sidebarlightmodelogo"
-                           : location.pathname?.includes("/mylibrarycourses")
-                           && role==="normaluser"
+                      location.pathname?.includes("/") &&
+                      location.pathname != "/mylibrarycourses" &&
+                      location.pathname != "/ratingsidebar" &&
+                      role === "normaluser"
+                        ? "sidebarlightmodelogo"
+                        : location.pathname?.includes("/mylibrarycourses") &&
+                          role === "normaluser"
                         ? "myLibraryLogo"
-                        : location.pathname?.includes("/ratingsidebar")
-                        && role==="normaluser"
+                        : location.pathname?.includes("/ratingsidebar") &&
+                          role === "normaluser"
                         ? "ratingSideBarLightLogo"
                         : location.pathname?.includes("/") &&
-
-                        location.pathname != "/recentlyviewed" &&
-                        location.pathname != "/mylibrarycourses" &&
-                        location.pathname != "/ratingsidebar" &&
-                        location.pathname != "/editormainpage" &&
-                        location.pathname != "/feedback" &&
-                        role==="editor"
+                          location.pathname != "/recentlyviewed" &&
+                          location.pathname != "/mylibrarycourses" &&
+                          location.pathname != "/ratingsidebar" &&
+                          location.pathname != "/editormainpage" &&
+                          location.pathname != "/feedback" &&
+                          role === "editor"
                         ? "homePageEditorLogoLight"
-
-                        : location.pathname?.includes("/recentlyviewed") && role==="editor"
+                        : location.pathname?.includes("/recentlyviewed") &&
+                          role === "editor"
                         ? "recentlyViewLightEditor"
-
-                        : location.pathname?.includes("/mylibrarycourses") && role==="editor"
+                        : location.pathname?.includes("/mylibrarycourses") &&
+                          role === "editor"
                         ? "libraryLightEditorLogo"
-
-                        : location.pathname?.includes("/ratingsidebar") && role==="editor"
+                        : location.pathname?.includes("/ratingsidebar") &&
+                          role === "editor"
                         ? "ratingLogoEditorLight"
-
-                        : location.pathname?.includes("/editormainpage") && role==="editor"
+                        : location.pathname?.includes("/editormainpage") &&
+                          role === "editor"
                         ? "editorMainPageLigght"
-
-                        : location.pathname?.includes("/feedback") && role==="editor"
+                        : location.pathname?.includes("/feedback") &&
+                          role === "editor"
                         ? "feedBackLightEditor"
-
                         : location.pathname?.includes("/") &&
-
-                        location.pathname != "/recentlyviewed" &&
-                        location.pathname != "/mylibrarycourses" &&
-                        location.pathname != "/ratingsidebar" &&
-                        location.pathname != "/editormainpage" &&
-                        location.pathname != "/feedback" &&
-                        location.pathname != "/login" &&
-                        location.pathname != "/register" &&
-                        role===null
-                        ?"homePageLightLogo"
-                        :location.pathname?.includes("/login")
-
+                          location.pathname != "/recentlyviewed" &&
+                          location.pathname != "/mylibrarycourses" &&
+                          location.pathname != "/ratingsidebar" &&
+                          location.pathname != "/editormainpage" &&
+                          location.pathname != "/feedback" &&
+                          location.pathname != "/login" &&
+                          location.pathname != "/register" &&
+                          role === null
+                        ? "homePageLightLogo"
+                        : location.pathname?.includes("/login")
                         ? "loginPageLight"
-
-                        :location.pathname?.includes("/register")
-
+                        : location.pathname?.includes("/register")
                         ? "registerPageLight"
                         : ""
-
-
                     }
                     // className="sidebarlightmodelogo"
                   />

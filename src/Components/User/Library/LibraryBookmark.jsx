@@ -256,11 +256,10 @@ const LibraryBookmark = () => {
                             style={{ display: "flex", alignItems: " center" }}
                           >
                             <span
-                              className={
-                                theme
-                                  ? "chapternameclass"
-                                  : "chapternameclasstwo"
-                              }
+                              className=
+                               "chapternameclass"
+
+                              
                             >
                               {item?.PriorityType?.charAt(0).toUpperCase() +
                                 item?.PriorityType?.slice(1)}

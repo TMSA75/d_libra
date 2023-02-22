@@ -129,9 +129,8 @@ const CoursePageGuest = () => {
                   {item?.lecture?.length > 0 && ( */}
                 <div>
                   <span
-                    className={
-                      theme ? "chapternameclass" : "chapternameclasstwo"
-                    }
+                    className="chapternameclass"
+
                   >
                     {coursesWithTopics?.CategoryName?.charAt(0).toUpperCase() +
                       coursesWithTopics?.CategoryName?.slice(1)}
@@ -224,9 +223,7 @@ const CoursePageGuest = () => {
                   {item?.lecture?.length > 0 && ( */}
                     <div>
                       <span
-                        className={
-                          theme ? "chapternameclass" : "chapternameclasstwo"
-                        }
+                        className="chapternameclass"
                       >
                         {item?.CategoryName?.charAt(0).toUpperCase() +
                           item?.CategoryName?.slice(1)}

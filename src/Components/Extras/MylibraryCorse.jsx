@@ -195,9 +195,9 @@ const MylibraryCorse = () => {
                     <div className="content_root_container">
                       <div>
                         <span
-                          className={
-                            theme ? "chapternameclass" : "chapternameclasstwo"
-                          }
+                          className=
+                           "chapternameclass"
+                          
                         >
                           {item.Coursename === null
                             ? "No Course Name"

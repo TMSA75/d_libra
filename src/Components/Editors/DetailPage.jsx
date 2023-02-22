@@ -506,8 +506,7 @@ const DetailPage = () => {
                               ) : null}
                             </div>
                           )}
-
-                          {token ? ( // Bookmark For Editor
+                          {token && ( // Bookmark For Editor
                             <img
                               src={
                                 details?.bookmark === null
@@ -541,15 +540,17 @@ const DetailPage = () => {
                               }}
                               onClick={hanldeBookMarkPriority}
                             />
-                          ) : (
-                            <img
-                              src={Bookmark_grey}
-                              alt=""
-                              className="detail_tag_text_two"
-                              style={{ paddingLeft: "24px", cursor: "pointer" }}
-                              onClick={hanldeBookMarkPriority}
-                            />
-                          )}
+                          )
+                          //  : (
+                          //   <img
+                          //     src={Bookmark_grey}
+                          //     alt=""
+                          //     className="detail_tag_text_two"
+                          //     style={{ paddingLeft: "24px", cursor: "pointer" }}
+                          //     onClick={hanldeBookMarkPriority}
+                          //   />
+                          // )
+                          }
                         </div>
                       </>
                     )}
@@ -574,8 +575,9 @@ const DetailPage = () => {
                             {tag}
                           </button>
                         ))}
+
                         {/*  Normal User Bookmark For PC */}
-                        {token ? (
+                        {token && (
                           <img
                             src={
                               params?.id === details?.post?.id?.toString()
@@ -612,21 +614,23 @@ const DetailPage = () => {
                             }}
                             onClick={hanldeBookMarkPriority}
                           />
-                        ) : (
-                          <img
-                            src={Bookmark_grey}
-                            alt=""
-                            className="detail_tag_text_two"
-                            style={{
-                              marginLeft: "10px",
-                              marginTop: "7px",
-                              cursor: "pointer",
-                              height: "18px",
-                              width: "18px",
-                            }}
-                            onClick={hanldeBookMarkPriority}
-                          />
-                        )}
+                        )
+                        // : (
+                        //   <img
+                        //     src={Bookmark_grey}
+                        //     alt=""
+                        //     className="detail_tag_text_two"
+                        //     style={{
+                        //       marginLeft: "10px",
+                        //       marginTop: "7px",
+                        //       cursor: "pointer",
+                        //       height: "18px",
+                        //       width: "18px",
+                        //     }}
+                        //     onClick={hanldeBookMarkPriority}
+                        //   />
+                        // )
+                        }
                       </div>
                     </div>
                   </>
@@ -700,7 +704,7 @@ const DetailPage = () => {
                             border: "none",
                           }}
                         >
-                          {token ? (
+                          {token && (
                             <img
                               src={
                                 params?.id === details?.post?.id?.toString()
@@ -745,30 +749,31 @@ const DetailPage = () => {
                               }
                               onClick={hanldeBookMarkPriority}
                             />
-                          ) : (
-                            <img
-                              src={Bookmark_grey}
-                              alt=""
-                              style={
-                                pinstate
-                                  ? {
-                                      position: "relative",
-                                      width: "17px",
-                                      top: "-10px",
-                                      left: "0px",
-                                    }
-                                  : {
-                                      paddingLeft: "24px",
-                                      cursor: "pointer",
-                                      height: "30px",
-                                      width: "40px",
-                                    }
-                              }
-                              // className="userdetailpinimage"
-                              // style={{ position: 'relative' width: '20px', top: '-2px'}}
-                              onClick={hanldeBookMarkPriority}
-                            />
-                          )}
+                          )
+                          // : (
+                          //   <img
+                          //     src={Bookmark_grey}
+                          //     alt=""
+                          //     style={
+                          //       pinstate
+                          //         ? {
+                          //             position: "relative",
+                          //             width: "17px",
+                          //             top: "-10px",
+                          //             left: "0px",
+                          //           }
+                          //         : {
+                          //             paddingLeft: "24px",
+                          //             cursor: "pointer",
+                          //             height: "30px",
+                          //             width: "40px",
+                          //           }
+                          //     }
+                          //     // className="userdetailpinimage"
+                          //     // style={{ position: 'relative' width: '20px', top: '-2px'}}
+                          //     onClick={hanldeBookMarkPriority}
+                          //   />)
+                          }
                         </button>
                         <button
                           style={{ background: "none", border: "none" }}
@@ -807,7 +812,7 @@ const DetailPage = () => {
                 {role === "normaluser" || role === null ? (
                   <>
                     <div className="bookmark_normaluser_null_tablet">
-                      {token ? (
+                      {token &&(
                         <img
                           src={
                             params?.id === details?.post?.id?.toString()
@@ -843,15 +848,17 @@ const DetailPage = () => {
                           }}
                           onClick={hanldeBookMarkPriority}
                         />
-                      ) : (
-                        <img
-                          src={Bookmark_grey}
-                          alt=""
-                          className="detail_tag_text_two"
-                          style={{ paddingLeft: "24px", cursor: "pointer" }}
-                          onClick={hanldeBookMarkPriority}
-                        />
-                      )}
+                      )
+                      // : (
+                      //   <img
+                      //     src={Bookmark_grey}
+                      //     alt=""
+                      //     className="detail_tag_text_two"
+                      //     style={{ paddingLeft: "24px", cursor: "pointer" }}
+                      //     onClick={hanldeBookMarkPriority}
+                      //   />
+                      // )
+                      }
                     </div>
                     <div
                       className={

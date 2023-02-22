@@ -338,9 +338,8 @@ const MyContents = () => {
                 >
                   <div>
                     <span
-                      className={
-                        theme ? "chapternameclass" : "chapternameclasstwo"
-                      }
+                      className="chapternameclass"
+
                     >
                       {coursesWithTopics?.CategoryName?.charAt(
                         0
@@ -448,9 +447,7 @@ const MyContents = () => {
                     <div className="content_root_container" key={item?.id}>
                       <div>
                         <span
-                          className={
-                            theme ? "chapternameclass" : "chapternameclasstwo"
-                          }
+                          className="chapternameclass" 
                         >
                           {item?.CategoryName?.charAt(0).toUpperCase() +
                             item?.CategoryName?.slice(1)}
